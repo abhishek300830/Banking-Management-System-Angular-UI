@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginpage',
-  templateUrl: './loginpage.component.html',
-  styleUrls: ['./loginpage.component.scss'],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginpageComponent {
+export class LoginComponent {
   constructor(private loginService: LoginService, private router: Router) {}
 
   onSubmit(form: NgForm) {

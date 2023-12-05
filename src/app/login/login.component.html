@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="login-form col-lg-4 col-sm-10 p-lg-5">
+      <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform)">
+        <div class="form-heading mb-3">Welcome</div>
+        <label for="username" class="form-label">Username</label>
+        <div class="input-with-icon mb-4">
+          <input
+            ngModel
+            name="username"
+            type="email"
+            class="form-control"
+            id="username"
+            aria-describedby="usernameHelp"
+          />
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <!-- <div id="usernameHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div> -->
+        <!-- </div> -->
+        <label for="password" class="form-label">Password</label>
+        <div class="input-with-icon mb-4">
+          <input
+            ngModel
+            name="password"
+            type="password"
+            class="form-control"
+            id="password"
+          />
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="text-center">
+          <button class="btn submit-btn" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-4 login-page-img">
+      <img
+        src="\assets\images\secure_login.svg"
+        alt="secure login"
+        draggable="false"
+      />
+    </div>
+  </div>
+</div>

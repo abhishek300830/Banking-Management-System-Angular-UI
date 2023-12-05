@@ -1,25 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomepageComponent } from './homepage/homepage.component';
-import { LoginpageComponent } from './loginpage/loginpage.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ChangePasswordComponent } from './dashboard/shared/change-password/change-password.component';
-import { LoginGuard } from './loginpage/login.guard';
+import { LoginGuard } from './login/login.guard';
+import { ChangePasswordComponent } from './dashboard/change-password/change-password.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomepageComponent,
+    component: HomeComponent,
   },
   {
     path: 'login',
-    component: LoginpageComponent,
+    component: LoginComponent,
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [LoginGuard],
+    // canActivate: [LoginGuard],
     children: [
       {
         path: 'changepassword',
