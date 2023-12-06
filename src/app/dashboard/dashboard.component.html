@@ -1,16 +1,10 @@
-<p>dashboard works!</p>
-
-<div class="fluid-container">
-  <div class="row">
-    <app-dashboard-header></app-dashboard-header>
+<app-dashboard-header></app-dashboard-header>
+<div class="dashboard-container">
+  <div class="left-side">
+    <app-sidebar></app-sidebar>
   </div>
-  <div class="row">
-    <div class="col-2">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="col">
-      <app-manager-view></app-manager-view>
-      <router-outlet></router-outlet>
-    </div>
+  <div class="right-side">
+    <app-manager-view></app-manager-view>
+    <!-- <router-outlet></router-outlet> -->
   </div>
 </div>

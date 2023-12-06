@@ -1,0 +1,11 @@
+.dashboard-container{
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    // .left-side{
+    //     // background-color: red;
+    // }
+    .right-side{
+        background-color: #F8FBFF;
+    }
+}

@@ -1,0 +1,37 @@
+$PurpleColor: #3F3C6C;
+$lightBlueColor :#F8FBFF;
+$AquaColor:#00A9A4;
+
+.sidebar-container{
+        font-family: 'Poppins', sans-serif;   
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        .sidebar-item{
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            padding: 18px 0px;
+            padding-left: 25px;
+            transition: all .2s ease-in-out;
+            .item-icon{
+                img{
+                    width: 21px;
+                }
+            }
+            .item-heading{
+                font-size: 1rem;
+    
+            }
+            &:hover{
+                cursor: pointer;
+                background-color: $lightBlueColor;
+                border-left: 5px solid $AquaColor;                
+                
+            }
+        }
+        .align-end{
+            margin-top: auto;
+        }
+        
+    }

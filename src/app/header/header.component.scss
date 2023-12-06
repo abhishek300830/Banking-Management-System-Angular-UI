@@ -3,7 +3,8 @@ $lightColor: white;
 
 .navbar{
     font-family: 'Poppins', sans-serif;
-    background-color: whitesmoke; 
+    // background-color: whitesmoke; 
+    background-color: #F8FBFF;
     .logo-container{
         img{
             width: 250px;
@@ -11,13 +12,6 @@ $lightColor: white;
         &:hover{
             cursor: pointer;
         }
-    }
-    .navbar-brand{
-        margin-left: 20px;
-        font-size: 1.6rem;
-        font-weight: bold;
-        color: $mainColor;
-        font-style: italic;
     }
     .login-btn{
         background-color: $mainColor;
