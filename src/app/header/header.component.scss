@@ -2,7 +2,8 @@ $mainColor: #00A9A4;
 $lightColor: white;
 
 .navbar{
-    // background-color: whitesmoke; 
+    font-family: 'Poppins', sans-serif;
+    background-color: whitesmoke; 
     .logo-container{
         img{
             width: 250px;
@@ -21,8 +22,14 @@ $lightColor: white;
     .login-btn{
         background-color: $mainColor;
         color: $lightColor;
-        // border-radius: 50px;
         padding: 10px 25px;
+        transition: all .2s;
+        &:hover{
+            background-color: #3F3C6C;
+        }
+        &:active{
+            scale: .9;
+        }
     }
 
 }

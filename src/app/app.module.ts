@@ -20,6 +20,8 @@ import { RegisterNewComponent } from './dashboard/register-new/register-new.comp
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { ManagerViewComponent } from './dashboard/manager-view/manager-view.component';
 import { ViewEditDetailsComponent } from './dashboard/view-edit-details/view-edit-details.component';
+import { OurFeaturesComponent } from './home/body/our-features/our-features.component';
+import { JoinUsComponent } from './home/body/join-us/join-us.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ViewEditDetailsComponent } from './dashboard/view-edit-details/view-edi
     SidebarComponent,
     ManagerViewComponent,
     ViewEditDetailsComponent,
+    OurFeaturesComponent,
+    JoinUsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

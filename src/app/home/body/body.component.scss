@@ -1,0 +1,46 @@
+$mainColor: #00A9A4;
+$lightColor: white;
+
+.container-fluid{
+    font-family: 'Poppins', sans-serif;
+    // min-height: 65vh;
+    padding: 0;
+    .img-fluid{
+        position: absolute;
+        top: -70px;
+        z-index: -1;
+    }
+    .heading-container{
+        height: 70vh;
+        margin-top: 200px;
+        padding-left: 10%;
+        width: 50%;
+
+        .sub-heading{
+            color: $mainColor;
+            font-style: italic;
+        }
+        .main-heading{
+            font-family: 'Playfair Display', serif;
+            font-size:3rem;
+            font-style: italic;
+        }
+        .paragraph{
+            margin-top: 10px;
+        }
+        .get-started-btn{
+            background-color: $mainColor;
+            color: $lightColor;
+            padding: 12px 35px;
+            margin-top: 2%;
+            transition: all .2s;
+            &:hover{
+                background-color: #3F3C6C;
+            }
+            &:active{
+                scale: .9;
+            }
+        }
+    }
+}
+

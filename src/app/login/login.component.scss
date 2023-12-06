@@ -49,6 +49,13 @@ $lightColor: white;
             border-radius: 50px;
             padding: 11px 30px;
             margin-top: 10px;
+            transition: all .2s;
+            &:hover{
+                background-color: #3F3C6C;
+            }
+            &:active{
+                scale: .9;
+            }
         }
 
     }
