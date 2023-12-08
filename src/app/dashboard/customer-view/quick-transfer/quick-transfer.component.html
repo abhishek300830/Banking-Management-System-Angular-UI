@@ -1,16 +1,9 @@
 <div class="container" [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }">
   <div class="row d-flex justify-content-center align-items-center">
-    <div class="transfer-form col-lg-10 col-sm-10 p-lg-4">
-      <form #transferform="ngForm">
-        <div class="form-heading mb-4">Transfer</div>
-        <div class="input-with-icon mb-3">
-          <select class="form-select" aria-label="Default select example">
-            <option selected disabled>Choose Transfer Type</option>
-            <option value="withdraw">Withdraw</option>
-            <option value="deposit">Deposit</option>
-          </select>
-          <i class="fa-solid fa-money-bill-transfer"></i>
-        </div>
+    <div class="quick-transfer-form col-lg-10 col-sm-10 p-lg-4">
+      <form #quickTransferForm="ngForm">
+        <div class="form-heading mb-4">Quick Transfer</div>
+        <div class="input-with-icon mb-3"></div>
         <label for="account-number" class="form-label">Account Number</label>
         <div class="input-with-icon mb-3">
           <input

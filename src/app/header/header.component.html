@@ -1,4 +1,7 @@
-<nav class="navbar navbar-expand-lg">
+<nav
+  class="navbar navbar-expand-lg"
+  [ngStyle]="{ 'background-color': loginpage ? '#F8FBFF' : '' }"
+>
   <div class="container-fluid">
     <div class="logo-container" routerLink="">
       <img
