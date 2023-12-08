@@ -12,7 +12,9 @@ $DTLightColor:#1F2326;
 html{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;   
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;  
+    // font-family: 'Playfair Display', serif; 
 }
 // body{
 
@@ -29,9 +31,27 @@ html{
     background-color: $DTDarkColor !important;
     color:white;
 }
+.dark_light_theme{
+    background-color: $DTLightColor !important;
+    color: white;
+
+}
 .dark_sidebar{
     background-color: $DTLightColor !important;
     color: white;
 
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    appearance: none; 
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: none;
+    -moz-appearance: textfield;
 }
 

@@ -4,6 +4,8 @@ $AquaColor:#00A9A4;
 $DTDarkColor:#16171B;
 
 .sidebar-container{
+        position: sticky;
+        top: 10%;
         font-family: 'Poppins', sans-serif;   
         height: 90vh;
         display: flex;

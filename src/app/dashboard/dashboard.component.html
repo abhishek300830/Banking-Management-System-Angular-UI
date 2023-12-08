@@ -4,7 +4,9 @@
     <app-sidebar></app-sidebar>
   </div>
   <div class="right-side" [ngClass]="{ dark_theme: currentTheme === 'Dark' }">
-    <app-manager-view></app-manager-view>
-    <!-- <router-outlet></router-outlet> -->
+    <!-- <app-manager-view></app-manager-view> -->
+    <app-customer-view></app-customer-view>
+    <!-- <app-cashier-view></app-cashier-view>s -->
+    <router-outlet></router-outlet>
   </div>
 </div>

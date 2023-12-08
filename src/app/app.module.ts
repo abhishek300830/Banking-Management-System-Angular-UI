@@ -22,6 +22,10 @@ import { ManagerViewComponent } from './dashboard/manager-view/manager-view.comp
 import { ViewEditDetailsComponent } from './dashboard/view-edit-details/view-edit-details.component';
 import { OurFeaturesComponent } from './home/body/our-features/our-features.component';
 import { JoinUsComponent } from './home/body/join-us/join-us.component';
+import { ViewHeadingComponent } from './dashboard/view-heading/view-heading.component';
+import { TransferComponent } from './dashboard/transfer/transfer.component';
+import { QuickAccessComponent } from './dashboard/quick-access/quick-access.component';
+import { RequestsComponent } from './dashboard/manager-view/requests/requests.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,10 @@ import { JoinUsComponent } from './home/body/join-us/join-us.component';
     ViewEditDetailsComponent,
     OurFeaturesComponent,
     JoinUsComponent,
+    ViewHeadingComponent,
+    TransferComponent,
+    QuickAccessComponent,
+    RequestsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
