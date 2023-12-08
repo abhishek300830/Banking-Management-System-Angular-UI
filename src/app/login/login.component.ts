@@ -35,7 +35,7 @@ export class LoginComponent {
     });
   }
 
-  onfetchBalance() {
-    this.loginService.fetchBalance();
-  }
+  // onfetchBalance() {
+  //   this.loginService.fetchBalance();
+  // }
 }

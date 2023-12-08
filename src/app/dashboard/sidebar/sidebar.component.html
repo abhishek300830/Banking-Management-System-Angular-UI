@@ -5,7 +5,12 @@
     dark_sidebar_container: currentTheme === 'Dark'
   }"
 >
-  <div class="sidebar-item">
+  <div
+    class="sidebar-item"
+    routerLink="/dashboard"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"
@@ -15,7 +20,13 @@
     </div>
     <div class="item-heading">Dashboard</div>
   </div>
-  <div class="sidebar-item">
+
+  <div
+    class="sidebar-item"
+    routerLink="/dashboard/requests"
+    routerLinkActive="active"
+    *ngIf="user.role === 'Manager'"
+  >
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"
@@ -25,7 +36,13 @@
     </div>
     <div class="item-heading">Approve Request</div>
   </div>
-  <div class="sidebar-item">
+
+  <div
+    class="sidebar-item"
+    routerLink="/dashboard/register"
+    routerLinkActive="active"
+    *ngIf="user.role === 'Manager' || user.role === 'Cashier'"
+  >
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"
@@ -35,7 +52,13 @@
     </div>
     <div class="item-heading">Register Customer</div>
   </div>
-  <div class="sidebar-item">
+
+  <div
+    class="sidebar-item"
+    routerLink="/dashboard/editcustomer"
+    routerLinkActive="active"
+    *ngIf="user.role === 'Manager' || user.role === 'Cashier'"
+  >
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"
@@ -45,7 +68,13 @@
     </div>
     <div class="item-heading">View and Manage</div>
   </div>
-  <div class="sidebar-item">
+
+  <div
+    class="sidebar-item"
+    routerLink="/dashboard/transactions"
+    routerLinkActive="active"
+    *ngIf="user.role === 'Customer'"
+  >
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"
@@ -55,7 +84,12 @@
     </div>
     <div class="item-heading">View Transactions</div>
   </div>
-  <div class="sidebar-item align-end">
+
+  <div
+    class="sidebar-item align-end"
+    routerLink="/dashboard/changepassword"
+    routerLinkActive="active"
+  >
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"
@@ -65,6 +99,7 @@
     </div>
     <div class="item-heading">Change Password</div>
   </div>
+
   <div class="sidebar-item">
     <div class="item-icon">
       <img
@@ -75,7 +110,8 @@
     </div>
     <div class="item-heading">Logout</div>
   </div>
-  <div class="sidebar-item" (click)="changeTheme()">
+
+  <div class="sidebar-item" (click)="changeTheme()" routerLinkActive="active">
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"

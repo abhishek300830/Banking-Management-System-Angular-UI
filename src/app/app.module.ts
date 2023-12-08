@@ -27,6 +27,7 @@ import { TransferComponent } from './dashboard/transfer/transfer.component';
 import { QuickAccessComponent } from './dashboard/quick-access/quick-access.component';
 import { RequestsComponent } from './dashboard/manager-view/requests/requests.component';
 import { QuickTransferComponent } from './dashboard/customer-view/quick-transfer/quick-transfer.component';
+import { TransactionComponent } from './dashboard/transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { QuickTransferComponent } from './dashboard/customer-view/quick-transfer
     QuickAccessComponent,
     RequestsComponent,
     QuickTransferComponent,
+    TransactionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

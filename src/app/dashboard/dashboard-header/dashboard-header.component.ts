@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
 
@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class DashboardHeaderComponent implements OnInit, OnDestroy {
   currentTheme: String;
   themeSubscription: Subscription;
+  @Input() username: string;
 
   constructor(private dashboardService: DashboardService) {}
 

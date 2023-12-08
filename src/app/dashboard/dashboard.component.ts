@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DashboardService } from './service/dashboard.service';
 import { Subscription } from 'rxjs';
+import { LoginService, UserModel } from '../login/service/login.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,8 +11,13 @@ import { Subscription } from 'rxjs';
 export class DashboardComponent implements OnInit, OnDestroy {
   currentTheme: string;
   themeSubscription: Subscription;
+  userSubscription: Subscription;
+  user: UserModel;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(
+    private dashboardService: DashboardService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit() {
     this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
@@ -19,6 +25,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.currentTheme = theme;
       }
     );
+    this.userSubscription = this.loginService.currentUser$.subscribe((user) => {
+      this.user = user;
+    });
   }
 
   ngOnDestroy(): void {

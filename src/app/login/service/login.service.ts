@@ -30,16 +30,16 @@ export class LoginService {
     return this.user;
   }
 
-  fetchBalance() {
-    this.http
-      .get('http://127.0.0.1:8000/account/balance')
-      .subscribe((response) => {
-        console.log('Fetch response', response);
-      });
-  }
+  // fetchBalance() {
+  //   this.http
+  //     .get('http://127.0.0.1:8000/account/balance')
+  //     .subscribe((response) => {
+  //       console.log('Fetch response', response);
+  //     });
+  // }
 }
 
-class UserModel {
+export class UserModel {
   public jwt_token: string;
   public username: string;
   public role: string;

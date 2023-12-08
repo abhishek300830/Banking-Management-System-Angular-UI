@@ -3,6 +3,8 @@ $lightBlueColor :#F8FBFF;
 $AquaColor:#00A9A4;
 $DTDarkColor:#16171B;
 
+$active-color: var(--text-color);
+
 .sidebar-container{
         position: sticky;
         top: 10%;
@@ -53,4 +55,10 @@ $DTDarkColor:#16171B;
         }
     }
 }
+
+.active{
+    background-color: $active-color;
+    border-left: 5px solid $AquaColor; 
+}
+
 
