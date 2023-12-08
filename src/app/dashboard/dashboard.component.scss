@@ -1,3 +1,5 @@
+$lightBlueColor :#F8FBFF;
+
 .dashboard-container{
     min-height: 90vh;
     display: grid;
@@ -6,6 +8,6 @@
     //     // background-color: red;
     // }
     .right-side{
-        background-color: #F8FBFF;
+        background-color: $lightBlueColor;
     }
 }

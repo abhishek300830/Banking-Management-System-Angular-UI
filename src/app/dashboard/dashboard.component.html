@@ -3,7 +3,7 @@
   <div class="left-side">
     <app-sidebar></app-sidebar>
   </div>
-  <div class="right-side">
+  <div class="right-side" [ngClass]="{ dark_theme: currentTheme === 'Dark' }">
     <app-manager-view></app-manager-view>
     <!-- <router-outlet></router-outlet> -->
   </div>

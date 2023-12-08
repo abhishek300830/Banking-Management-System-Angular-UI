@@ -1,8 +1,15 @@
-<nav class="navbar navbar-expand-lg">
+<nav
+  class="navbar navbar-expand-lg"
+  [ngClass]="{ dark_theme: currentTheme === 'Dark' }"
+>
   <div class="container-fluid">
     <div class="logo-container" routerLink="">
       <img
-        src="/assets/images/main_logo.png"
+        [src]="
+          currentTheme === 'Dark'
+            ? '/assets/images/logo-dark-bg.png'
+            : '/assets/images/main_logo.png'
+        "
         alt="cashguard logo"
         draggable="false"
       />
@@ -45,6 +52,7 @@
           </ul>
         </li> -->
       </ul>
+      <div>Abhishek Kumar</div>
     </div>
   </div>
 </nav>

@@ -3,6 +3,11 @@ $PurpleColor: #3F3C6C;
 $lightBlueColor :#F8FBFF;
 $AquaColor:#00A9A4;
 
+// Dark mode colors
+$DTDarkColor:#16171B;
+$DTLightColor:#1F2326;
+
+
 
 html{
     margin: 0;
@@ -12,4 +17,21 @@ html{
 // body{
 
 // }
+
+// .light_theme{
+//     background-color: $lightBlueColor;
+// }
+// .light_sidebar{
+
+
+// }
+.dark_theme{
+    background-color: $DTDarkColor !important;
+    color:white;
+}
+.dark_sidebar{
+    background-color: $DTLightColor !important;
+    color: white;
+
+}
 
