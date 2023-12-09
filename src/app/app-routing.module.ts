@@ -11,6 +11,7 @@ import { RegisterNewComponent } from './dashboard/register-new/register-new.comp
 import { ViewEditDetailsComponent } from './dashboard/view-edit-details/view-edit-details.component';
 import { TransactionComponent } from './dashboard/transaction/transaction.component';
 import { DashboardMainViewComponent } from './dashboard/dashboard-main-view/dashboard-main-view.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
         component: ChangePasswordComponent,
       },
     ],
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 

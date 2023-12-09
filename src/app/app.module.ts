@@ -29,6 +29,7 @@ import { RequestsComponent } from './dashboard/manager-view/requests/requests.co
 import { QuickTransferComponent } from './dashboard/customer-view/quick-transfer/quick-transfer.component';
 import { TransactionComponent } from './dashboard/transaction/transaction.component';
 import { DashboardMainViewComponent } from './dashboard/dashboard-main-view/dashboard-main-view.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { DashboardMainViewComponent } from './dashboard/dashboard-main-view/dash
     QuickTransferComponent,
     TransactionComponent,
     DashboardMainViewComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

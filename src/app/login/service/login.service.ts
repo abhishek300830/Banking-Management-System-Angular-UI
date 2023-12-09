@@ -11,7 +11,12 @@ export class LoginService {
 
   user = new UserModel();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    const userDetails = sessionStorage.getItem('user');
+    if (userDetails) {
+      this.currentUser$.next(JSON.parse(userDetails));
+    }
+  }
 
   login(username: string, password: string) {
     return this.http.post('http://127.0.0.1:8000/login', {
@@ -29,17 +34,15 @@ export class LoginService {
 
     return this.user;
   }
-
-  // fetchBalance() {
-  //   this.http
-  //     .get('http://127.0.0.1:8000/account/balance')
-  //     .subscribe((response) => {
-  //       console.log('Fetch response', response);
-  //     });
-  // }
 }
 
-export class UserModel {
+interface userDetail {
+  jwt_token: string;
+  username: string;
+  role: string;
+}
+
+export class UserModel implements userDetail {
   public jwt_token: string;
   public username: string;
   public role: string;

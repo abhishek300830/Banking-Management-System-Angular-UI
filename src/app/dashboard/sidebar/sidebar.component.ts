@@ -2,6 +2,7 @@ import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
 import { LoginService, UserModel } from 'src/app/login/service/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,7 +18,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
   constructor(
     private dashboardService: DashboardService,
     private loginService: LoginService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -53,6 +55,12 @@ export class SidebarComponent implements OnInit, OnDestroy {
     } else {
       return 'active_dark';
     }
+  }
+
+  onLogout() {
+    this.loginService.currentUser$.next(null);
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
   }
 
   ngOnDestroy() {

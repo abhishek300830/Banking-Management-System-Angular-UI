@@ -100,7 +100,7 @@
     <div class="item-heading">Change Password</div>
   </div>
 
-  <div class="sidebar-item">
+  <div class="sidebar-item" (click)="onLogout()">
     <div class="item-icon">
       <img
         [ngClass]="{ light_icon: currentTheme === 'Dark' }"

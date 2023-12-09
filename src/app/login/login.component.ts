@@ -25,7 +25,8 @@ export class LoginComponent {
       next: (response) => {
         const user = this.loginService.setUserModel(response['jwt_token']);
         this.loginService.currentUser$.next(user);
-        console.log('redirected');
+        sessionStorage.setItem('user', JSON.stringify(user));
+        // localStorage.setItem('user');
         this.router.navigate(['/dashboard']);
       },
       error: (error) => {
