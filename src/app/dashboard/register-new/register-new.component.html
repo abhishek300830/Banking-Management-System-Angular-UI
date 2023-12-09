@@ -1,1 +1,122 @@
-<p>register-new works!</p>
+<div class="container p-lg-5">
+  <form
+    class="row g-3 register-new-form"
+    [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
+  >
+    <h3 class="text-center">Register New Customer</h3>
+    <div class="col-md-5">
+      <label for="username" class="form-label">Username:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-user"></i>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          required
+          minlength="5"
+          maxlength="20"
+        />
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="password" class="form-label">Password:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-lock"></i>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+          minlength="8"
+          maxlength="20"
+        />
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="name" class="form-label">Name:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-user"></i>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="email" class="form-label">Email:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-envelope"></i>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="phone" class="form-label">Phone:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-phone"></i>
+        <input
+          type="tel"
+          class="form-control"
+          id="phone"
+          name="phone"
+          required
+          pattern="[0-9]{10}"
+        />
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="gender" class="form-label">Gender:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-venus-mars"></i>
+        <select class="form-select" id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="id-proof-type" class="form-label">ID Proof Type:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-id-card"></i>
+        <select
+          class="form-select"
+          id="id-proof-type"
+          name="id-proof-type"
+          required
+        >
+          <option value="aadhar-card">Aadhar Card</option>
+          <option value="pan-card">Pan Card</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="id-proof-number" class="form-label">ID Proof Number:</label>
+      <div class="input-with-icon">
+        <i class="fas fa-id-card"></i>
+        <input
+          type="text"
+          class="form-control"
+          id="id-proof-number"
+          name="id-proof-number"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary submit-btn">
+        <i class="fas fa-user-plus"></i> Add Customer
+      </button>
+    </div>
+  </form>
+</div>
