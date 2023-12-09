@@ -4,9 +4,6 @@
     <app-sidebar></app-sidebar>
   </div>
   <div class="right-side" [ngClass]="{ dark_theme: currentTheme === 'Dark' }">
-    <app-manager-view *ngIf="user.role === 'Manager'"></app-manager-view>
-    <app-customer-view *ngIf="user.role === 'Customer'"></app-customer-view>
-    <app-cashier-view *ngIf="user.role === 'Cashier'"></app-cashier-view>s
     <router-outlet></router-outlet>
   </div>
 </div>

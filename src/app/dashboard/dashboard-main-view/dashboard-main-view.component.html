@@ -1,0 +1,3 @@
+<app-manager-view *ngIf="user.role === 'Manager'"></app-manager-view>
+<app-customer-view *ngIf="user.role === 'Customer'"></app-customer-view>
+<app-cashier-view *ngIf="user.role === 'Cashier'"></app-cashier-view>

@@ -10,6 +10,7 @@ import { RequestsComponent } from './dashboard/manager-view/requests/requests.co
 import { RegisterNewComponent } from './dashboard/register-new/register-new.component';
 import { ViewEditDetailsComponent } from './dashboard/view-edit-details/view-edit-details.component';
 import { TransactionComponent } from './dashboard/transaction/transaction.component';
+import { DashboardMainViewComponent } from './dashboard/dashboard-main-view/dashboard-main-view.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [LoginGuard],
     children: [
+      {
+        path: '',
+        component: DashboardMainViewComponent,
+      },
       {
         path: 'requests',
         component: RequestsComponent,
