@@ -4,8 +4,18 @@
       <form #transferform="ngForm">
         <div class="form-heading mb-4">Transfer</div>
         <div class="input-with-icon mb-3">
-          <select class="form-select" aria-label="Default select example">
-            <option selected disabled>Choose Transfer Type</option>
+          <select
+            ngModel
+            class="form-select"
+            required
+            name="transfertype"
+            [ngClass]="{
+              invalidfield:
+                transferform.controls.transfertype?.invalid &&
+                transferform.controls.transfertype?.touched
+            }"
+          >
+            <!-- <option disabled>Choose Transfer Type</option> -->
             <option value="withdraw">Withdraw</option>
             <option value="deposit">Deposit</option>
           </select>
@@ -20,6 +30,13 @@
             class="form-control"
             id="account-number"
             aria-describedby="accountnumberHelp"
+            required
+            pattern="[0-9]+"
+            [ngClass]="{
+              invalidfield:
+                transferform.controls['account-number']?.invalid &&
+                transferform.controls['account-number']?.touched
+            }"
           />
           <i class="fa-solid fa-user"></i>
         </div>
@@ -32,12 +49,23 @@
             type="number"
             class="form-control"
             id="amount"
+            required
+            pattern="[0-9]+"
+            [ngClass]="{
+              invalidfield:
+                transferform.controls.amount?.invalid &&
+                transferform.controls.amount?.touched
+            }"
           />
           <i class="fa-solid fa-sack-dollar"></i>
         </div>
 
         <div class="text-center">
-          <button class="btn submit-btn" type="submit">
+          <button
+            class="btn submit-btn"
+            type="submit"
+            [disabled]="transferform.invalid"
+          >
             <i class="fa-solid fa-circle-check"></i>
             Transfer
           </button>

@@ -2,6 +2,8 @@
   <form
     class="row g-3 modify-customer-form"
     [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
+    (ngSubmit)="onSubmit(customerEditForm)"
+    #customerEditForm="ngForm"
   >
     <h5 class="text-center">Edit Customer Details</h5>
 
@@ -10,12 +12,18 @@
       <div class="input-with-icon">
         <i class="fa-solid fa-user"></i>
         <input
+          ngModel
           type="number"
           class="form-control"
           id="accountnumber"
           name="accountnumber"
           required
-          pattern="[0-9]"
+          pattern="[0-9]+"
+          [ngClass]="{
+            invalidfield:
+              customerEditForm.controls.accountnumber?.invalid &&
+              customerEditForm.controls.accountnumber?.touched
+          }"
         />
       </div>
     </div>
@@ -28,6 +36,7 @@
           id="customer-detail"
           name="customer-detail"
           required
+          [(ngModel)]="customerDetails"
         >
           <option value="name">Name</option>
           <option value="email">Email</option>
@@ -43,11 +52,18 @@
       <div class="input-with-icon">
         <i class="fas fa-user"></i>
         <input
+          ngModel
           type="text"
           class="form-control"
           id="name"
           name="name"
           required
+          pattern="[a-zA-Z ]+"
+          [ngClass]="{
+            invalidfield:
+              customerEditForm.controls.name?.invalid &&
+              customerEditForm.controls.name?.touched
+          }"
         />
       </div>
     </div>
@@ -56,11 +72,18 @@
       <div class="input-with-icon">
         <i class="fas fa-envelope"></i>
         <input
+          ngModel
           type="email"
           class="form-control"
           id="email"
           name="email"
           required
+          email
+          [ngClass]="{
+            invalidfield:
+              customerEditForm.controls.email?.invalid &&
+              customerEditForm.controls.email?.touched
+          }"
         />
       </div>
     </div>
@@ -69,12 +92,18 @@
       <div class="input-with-icon">
         <i class="fas fa-phone"></i>
         <input
-          type="tel"
+          ngModel
+          type="number"
           class="form-control"
           id="phone"
           name="phone"
           required
           pattern="[0-9]{10}"
+          [ngClass]="{
+            invalidfield:
+              customerEditForm.controls.phone?.invalid &&
+              customerEditForm.controls.phone?.touched
+          }"
         />
       </div>
     </div>
@@ -82,10 +111,20 @@
       <label for="gender" class="form-label">Gender</label>
       <div class="input-with-icon">
         <i class="fas fa-venus-mars"></i>
-        <select class="form-select" id="gender" name="gender" required>
+        <select
+          ngModel
+          class="form-select"
+          id="gender"
+          name="gender"
+          required
+          [ngClass]="{
+            invalidfield:
+              customerEditForm.controls.gender?.invalid &&
+              customerEditForm.controls.gender?.touched
+          }"
+        >
           <option value="male">Male</option>
           <option value="female">Female</option>
-          <option value="other">Other</option>
         </select>
       </div>
     </div>
@@ -98,7 +137,11 @@
       >
         <i class="fa-solid fa-circle-xmark"></i> Cancel
       </button>
-      <button type="submit" class="btn btn-primary submit-btn">
+      <button
+        type="submit"
+        class="btn btn-primary submit-btn"
+        [disabled]="customerEditForm.invalid"
+      >
         <i class="fas fa-user-plus"></i> Add Customer
       </button>
     </div>

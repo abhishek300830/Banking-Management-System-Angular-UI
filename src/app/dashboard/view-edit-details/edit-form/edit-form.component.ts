@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-form',
@@ -6,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./edit-form.component.scss'],
 })
 export class EditFormComponent {
-  customerDetails: string = 'name';
+  customerDetails: string;
   @Output() isEditMode = new EventEmitter();
 
   @Input() currentTheme: String;
@@ -14,5 +15,9 @@ export class EditFormComponent {
   ngOnInit() {}
   changeEditMode() {
     this.isEditMode.emit(false);
+  }
+
+  onSubmit(customerEditForm: NgForm) {
+    console.log(customerEditForm.value);
   }
 }

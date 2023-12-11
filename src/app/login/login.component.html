@@ -13,13 +13,17 @@
             class="form-control"
             id="username"
             aria-describedby="usernameHelp"
+            pattern="[a-z0-9A-Z]+"
+            required
+            [ngClass]="{
+              invalidfield:
+                loginform.controls.username?.invalid &&
+                loginform.controls.username?.touched
+            }"
           />
           <i class="fa-solid fa-user"></i>
         </div>
-        <!-- <div id="usernameHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div> -->
-        <!-- </div> -->
+
         <label for="password" class="form-label">Password</label>
         <div class="input-with-icon mb-4">
           <input
@@ -28,11 +32,22 @@
             type="password"
             class="form-control"
             id="password"
+            pattern="[a-z0-9A-Z!@#$%^&*]+"
+            required
+            [ngClass]="{
+              invalidfield:
+                loginform.controls.password?.invalid &&
+                loginform.controls.password?.touched
+            }"
           />
           <i class="fa-solid fa-lock"></i>
         </div>
         <div class="text-center">
-          <button class="btn submit-btn" type="submit">
+          <button
+            class="btn submit-btn"
+            type="submit"
+            [disabled]="loginform.invalid"
+          >
             <i class="fa-solid fa-circle-check"></i>
             Login
           </button>

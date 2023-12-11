@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register-new',
@@ -20,6 +21,12 @@ export class RegisterNewComponent {
       }
     );
   }
+  onSubmit(registraitonForm: NgForm) {
+    console.log(registraitonForm);
+    console.log(registraitonForm.value);
+    console.log('Submit');
+  }
+
   ngOnDestroy() {
     this.themeSubscription.unsubscribe();
   }
