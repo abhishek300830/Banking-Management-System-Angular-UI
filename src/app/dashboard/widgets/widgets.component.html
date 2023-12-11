@@ -1,0 +1,34 @@
+<div class="widget-container">
+  <div class="view-customer" *ngIf="isMorning">
+    <div class="img">
+      <i class="fa-solid fa-sun"></i>
+    </div>
+    <div class="text">
+      <div>Good Morning</div>
+    </div>
+  </div>
+  <div class="view-customer" *ngIf="!isMorning">
+    <div class="img">
+      <i class="fa-solid fa-moon"></i>
+    </div>
+    <div class="text">
+      <div>Good Evening</div>
+    </div>
+  </div>
+  <div class="view-customer">
+    <div class="img">
+      <i class="fa-solid fa-user-plus"></i>
+    </div>
+    <div class="text">
+      <div>Register Customer</div>
+    </div>
+  </div>
+  <div class="view-customer">
+    <div class="img">
+      <i class="fa-solid fa-people-roof"></i>
+    </div>
+    <div class="text">
+      <div>Manage Customer</div>
+    </div>
+  </div>
+</div>

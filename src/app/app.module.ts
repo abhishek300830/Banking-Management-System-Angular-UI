@@ -33,6 +33,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { EditFormComponent } from './dashboard/view-edit-details/edit-form/edit-form.component';
 import { ViewCustomerDetailsComponent } from './dashboard/view-edit-details/view-customer-details/view-customer-details.component';
 import { RequestCardComponent } from './dashboard/manager-view/requests/request-card/request-card.component';
+import { WidgetsComponent } from './dashboard/widgets/widgets.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { RequestCardComponent } from './dashboard/manager-view/requests/request-
     EditFormComponent,
     ViewCustomerDetailsComponent,
     RequestCardComponent,
+    WidgetsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
