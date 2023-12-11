@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { DashboardService } from '../../service/dashboard.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-edit-form',
@@ -11,23 +9,10 @@ export class EditFormComponent {
   customerDetails: string = 'name';
   @Output() isEditMode = new EventEmitter();
 
-  currentTheme: String;
-  themeSubscription: Subscription;
+  @Input() currentTheme: String;
 
-  constructor(private dashboardService: DashboardService) {}
-
-  ngOnInit() {
-    this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
-      (theme) => {
-        this.currentTheme = theme;
-      }
-    );
-  }
+  ngOnInit() {}
   changeEditMode() {
     this.isEditMode.emit(false);
-  }
-
-  ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
   }
 }

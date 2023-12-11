@@ -11,8 +11,10 @@ import { LoginService, UserModel } from '../login/service/login.service';
 export class DashboardComponent implements OnInit, OnDestroy {
   currentTheme: string;
   themeSubscription: Subscription;
-  userSubscription: Subscription;
+
   user: UserModel;
+  userSubscription: Subscription;
+
   isDashboardRoute: Boolean = false;
 
   constructor(

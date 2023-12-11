@@ -1,17 +1,20 @@
 <div class="container">
   <div class="row">
-    <app-view-heading title="Cashier"></app-view-heading>
+    <app-view-heading
+      title="Cashier"
+      [currentTheme]="currentTheme"
+    ></app-view-heading>
   </div>
   <div class="row">
-    <app-widgets></app-widgets>
+    <app-widgets [currentTheme]="currentTheme"></app-widgets>
   </div>
   <div class="row">
     <div class="col">
-      <app-quick-access></app-quick-access>
+      <app-quick-access [currentTheme]="currentTheme"></app-quick-access>
     </div>
 
     <div class="col">
-      <app-transfer></app-transfer>
+      <app-transfer [currentTheme]="currentTheme"></app-transfer>
     </div>
   </div>
 </div>

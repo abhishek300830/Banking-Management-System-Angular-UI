@@ -1,3 +1,12 @@
-<app-manager-view *ngIf="user.role === 'Manager'"></app-manager-view>
-<app-customer-view *ngIf="user.role === 'Customer'"></app-customer-view>
-<app-cashier-view *ngIf="user.role === 'Cashier'"></app-cashier-view>
+<app-manager-view
+  *ngIf="user.role === 'Manager'"
+  [currentTheme]="currentTheme"
+></app-manager-view>
+<app-customer-view
+  *ngIf="user.role === 'Customer'"
+  [currentTheme]="currentTheme"
+></app-customer-view>
+<app-cashier-view
+  *ngIf="user.role === 'Cashier'"
+  [currentTheme]="currentTheme"
+></app-cashier-view>

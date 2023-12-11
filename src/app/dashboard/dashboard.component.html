@@ -1,7 +1,10 @@
-<app-dashboard-header [username]="user.username"></app-dashboard-header>
+<app-dashboard-header
+  [username]="user.username"
+  [currentTheme]="currentTheme"
+></app-dashboard-header>
 <div class="dashboard-container">
   <div class="left-side">
-    <app-sidebar></app-sidebar>
+    <app-sidebar [currentTheme]="currentTheme"></app-sidebar>
   </div>
   <div class="right-side" [ngClass]="{ dark_theme: currentTheme === 'Dark' }">
     <router-outlet></router-outlet>

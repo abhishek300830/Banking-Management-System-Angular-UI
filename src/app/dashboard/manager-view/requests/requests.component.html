@@ -1,17 +1,9 @@
 <div class="container" [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }">
   <div class="request-header">Pending Requests</div>
   <div class="request-container">
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
-    <app-request-card></app-request-card>
+    <app-request-card [currentTheme]="currentTheme"></app-request-card>
+    <app-request-card [currentTheme]="currentTheme"></app-request-card>
+    <app-request-card [currentTheme]="currentTheme"></app-request-card>
+    <app-request-card [currentTheme]="currentTheme"></app-request-card>
   </div>
 </div>

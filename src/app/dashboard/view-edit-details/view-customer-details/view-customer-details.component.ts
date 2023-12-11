@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DashboardService } from '../../service/dashboard.service';
 import { Subscription } from 'rxjs';
 
@@ -9,23 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class ViewCustomerDetailsComponent {
   @Output() isEditMode = new EventEmitter();
-
-  currentTheme: String;
-  themeSubscription: Subscription;
-
-  constructor(private dashboardService: DashboardService) {}
-
-  ngOnInit() {
-    this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
-      (theme) => {
-        this.currentTheme = theme;
-      }
-    );
-  }
-
-  ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
-  }
+  @Input() currentTheme: String;
 
   changeEditMode() {
     this.isEditMode.emit(true);

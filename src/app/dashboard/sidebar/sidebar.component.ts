@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
 import { LoginService, UserModel } from 'src/app/login/service/login.service';
@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent implements OnInit, OnDestroy {
-  currentTheme: String;
-  themeSubscription: Subscription;
+export class SidebarComponent implements OnInit {
+  @Input() currentTheme: String;
+
   userSubscription: Subscription;
   user: UserModel;
 
@@ -23,11 +23,6 @@ export class SidebarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
-      (theme) => {
-        this.currentTheme = theme;
-      }
-    );
     this.userSubscription = this.loginService.currentUser$.subscribe((user) => {
       this.user = user;
     });
@@ -62,9 +57,5 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this.loginService.currentUser$.next(null);
     sessionStorage.clear();
     this.router.navigate(['/login']);
-  }
-
-  ngOnDestroy() {
-    this.themeSubscription.unsubscribe();
   }
 }

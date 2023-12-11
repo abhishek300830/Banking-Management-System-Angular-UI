@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
-    <app-view-heading title="Customer"></app-view-heading>
+    <app-view-heading
+      title="Customer"
+      [currentTheme]="currentTheme"
+    ></app-view-heading>
   </div>
   <div class="row">
     <div class="col">
@@ -8,7 +11,7 @@
     </div>
 
     <div class="col">
-      <app-quick-transfer></app-quick-transfer>
+      <app-quick-transfer [currentTheme]="currentTheme"></app-quick-transfer>
     </div>
   </div>
 </div>

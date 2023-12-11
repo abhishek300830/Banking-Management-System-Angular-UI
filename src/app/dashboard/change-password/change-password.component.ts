@@ -1,5 +1,5 @@
 import { NgForm } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../service/dashboard.service';
 
@@ -9,7 +9,7 @@ import { DashboardService } from '../service/dashboard.service';
   styleUrls: ['./change-password.component.scss'],
 })
 export class ChangePasswordComponent {
-  currentTheme: String;
+  currentTheme: string;
   themeSubscription: Subscription;
 
   constructor(private dashboardService: DashboardService) {}

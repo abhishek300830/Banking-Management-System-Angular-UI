@@ -1,4 +1,7 @@
-<div class="widget-container">
+<div
+  class="widget-container"
+  [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
+>
   <div class="view-customer" *ngIf="isMorning">
     <div class="img">
       <i class="fa-solid fa-sun"></i>

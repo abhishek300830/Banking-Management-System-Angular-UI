@@ -15,9 +15,11 @@
   <app-edit-form
     *ngIf="isEditMode"
     (isEditMode)="changeEditMode($event)"
+    [currentTheme]="currentTheme"
   ></app-edit-form>
   <app-view-customer-details
     *ngIf="!isEditMode"
     (isEditMode)="changeEditMode($event)"
+    [currentTheme]="currentTheme"
   ></app-view-customer-details>
 </div>
