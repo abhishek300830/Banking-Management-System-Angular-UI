@@ -1,40 +1,44 @@
-<div class="container p-lg-5">
+<div class="form-container p-lg-5">
   <form
-    class="row g-3 register-new-form"
+    class="row g-3 modify-customer-form"
     [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
   >
-    <h5 class="text-center">Register New Customer</h5>
-    <div class="col-md-5">
-      <label for="username" class="form-label">Username</label>
+    <h5 class="text-center">Edit Customer Details</h5>
+
+    <div>
+      <label for="accountnumber" class="form-label">Account Number</label>
       <div class="input-with-icon">
-        <i class="fas fa-user"></i>
+        <i class="fa-solid fa-user"></i>
         <input
-          type="text"
+          type="number"
           class="form-control"
-          id="username"
-          name="username"
+          id="accountnumber"
+          name="accountnumber"
           required
-          minlength="5"
-          maxlength="20"
+          pattern="[0-9]"
         />
       </div>
     </div>
-    <div class="col-md-5">
-      <label for="password" class="form-label">Password</label>
+    <div>
+      <label for="customer-detail" class="form-label">Customer Detail</label>
       <div class="input-with-icon">
-        <i class="fas fa-lock"></i>
-        <input
-          type="password"
-          class="form-control"
-          id="password"
-          name="password"
+        <i class="fas fa-id-card"></i>
+        <select
+          class="form-select"
+          id="customer-detail"
+          name="customer-detail"
           required
-          minlength="8"
-          maxlength="20"
-        />
+        >
+          <option value="name">Name</option>
+          <option value="email">Email</option>
+          <option value="phone">Phone Number</option>
+          <option value="gender">Gender</option>
+        </select>
       </div>
     </div>
-    <div class="col-md-5">
+
+    <!-- conditional Input fields -->
+    <div *ngIf="customerDetails === 'name'">
       <label for="name" class="form-label">Name</label>
       <div class="input-with-icon">
         <i class="fas fa-user"></i>
@@ -47,7 +51,7 @@
         />
       </div>
     </div>
-    <div class="col-md-5">
+    <div *ngIf="customerDetails === 'email'">
       <label for="email" class="form-label">Email</label>
       <div class="input-with-icon">
         <i class="fas fa-envelope"></i>
@@ -60,7 +64,7 @@
         />
       </div>
     </div>
-    <div class="col-md-5">
+    <div *ngIf="customerDetails === 'phone'">
       <label for="phone" class="form-label">Phone</label>
       <div class="input-with-icon">
         <i class="fas fa-phone"></i>
@@ -74,7 +78,7 @@
         />
       </div>
     </div>
-    <div class="col-md-5">
+    <div *ngIf="customerDetails === 'gender'">
       <label for="gender" class="form-label">Gender</label>
       <div class="input-with-icon">
         <i class="fas fa-venus-mars"></i>
@@ -85,35 +89,15 @@
         </select>
       </div>
     </div>
-    <div class="col-md-5">
-      <label for="id-proof-type" class="form-label">ID Proof Type</label>
-      <div class="input-with-icon">
-        <i class="fas fa-id-card"></i>
-        <select
-          class="form-select"
-          id="id-proof-type"
-          name="id-proof-type"
-          required
-        >
-          <option value="aadhar-card">Aadhar Card</option>
-          <option value="pan-card">Pan Card</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-md-5">
-      <label for="id-proof-number" class="form-label">ID Proof Number</label>
-      <div class="input-with-icon">
-        <i class="fas fa-id-card"></i>
-        <input
-          type="text"
-          class="form-control"
-          id="id-proof-number"
-          name="id-proof-number"
-          required
-        />
-      </div>
-    </div>
+
     <div class="col-12 text-center">
+      <button
+        type="submit"
+        class="btn btn-primary submit-btn me-3"
+        (click)="changeEditMode()"
+      >
+        <i class="fa-solid fa-circle-xmark"></i> Cancel
+      </button>
       <button type="submit" class="btn btn-primary submit-btn">
         <i class="fas fa-user-plus"></i> Add Customer
       </button>

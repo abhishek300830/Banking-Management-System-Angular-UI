@@ -1,0 +1,52 @@
+$mainColor: #00A9A4;
+$lightColor: white;
+
+.container{
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1.1rem;
+    width: 55%;
+    margin-top: 30px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,.1);
+    background-color: white;
+    border-radius: 20px;
+    .img-container{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 150px;
+            margin-bottom: 15px;
+        }
+    }
+    .details-container{
+        background-color: #f8fbff;
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 20px;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 45% 45%;
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            div{
+                border-bottom: 1px solid rgba(0, 0, 0, 0.085);
+            }
+        }
+    }
+    .submit-btn{
+        border: none;
+        background-color: $mainColor ;
+        color:$lightColor;
+        border-radius: 50px;
+        padding: 11px 30px;
+        margin-top: 10px;
+        transition: all .2s;
+        &:hover{
+            background-color: #3F3C6C;
+        }
+        &:active{
+            scale: .9;
+        }
+    }
+}

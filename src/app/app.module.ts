@@ -30,6 +30,8 @@ import { QuickTransferComponent } from './dashboard/customer-view/quick-transfer
 import { TransactionComponent } from './dashboard/transaction/transaction.component';
 import { DashboardMainViewComponent } from './dashboard/dashboard-main-view/dashboard-main-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EditFormComponent } from './dashboard/view-edit-details/edit-form/edit-form.component';
+import { ViewCustomerDetailsComponent } from './dashboard/view-edit-details/view-customer-details/view-customer-details.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TransactionComponent,
     DashboardMainViewComponent,
     PageNotFoundComponent,
+    EditFormComponent,
+    ViewCustomerDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

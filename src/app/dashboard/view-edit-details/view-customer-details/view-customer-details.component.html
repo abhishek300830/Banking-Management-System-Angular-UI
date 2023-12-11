@@ -1,0 +1,36 @@
+<div
+  class="container p-lg-5"
+  [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
+>
+  <div class="row img-container">
+    <img src="\assets\images\view-customer-details\male.svg" alt="" />
+  </div>
+  <div
+    class="row details-container"
+    [ngStyle]="{
+      'background-color': currentTheme === 'Dark' ? '#16171b' : '#f8fbff'
+    }"
+  >
+    <div class="left-side">
+      <div>Name :</div>
+      <div>Email :</div>
+      <div>Phone :</div>
+      <div>Gender :</div>
+      <div>ID Type :</div>
+      <div>ID Number :</div>
+    </div>
+    <div class="right-side">
+      <div>Abhishek</div>
+      <div>Abhishek@mail.com</div>
+      <div>8967567867</div>
+      <div>Male</div>
+      <div>Pan Card</div>
+      <div>746582648363</div>
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <button class="btn btn-primary submit-btn" (click)="changeEditMode()">
+      <i class="fa-solid fa-pen-to-square"></i> Modify Details
+    </button>
+  </div>
+</div>

@@ -1,1 +1,23 @@
-<p>view-edit-details works!</p>
+<div class="container">
+  <div class="search-container">
+    <input
+      type="search"
+      name="search"
+      id="search"
+      placeholder="Enter Customer Acount Number"
+    />
+
+    <button class="btn btn-primary submit-btn">
+      <i class="fa-solid fa-magnifying-glass"></i> Search
+    </button>
+  </div>
+
+  <app-edit-form
+    *ngIf="isEditMode"
+    (isEditMode)="changeEditMode($event)"
+  ></app-edit-form>
+  <app-view-customer-details
+    *ngIf="!isEditMode"
+    (isEditMode)="changeEditMode($event)"
+  ></app-view-customer-details>
+</div>
