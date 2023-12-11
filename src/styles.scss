@@ -1,3 +1,6 @@
+// @import "primeng/resources/themes/lara-light-blue/theme.css";
+// @import "primeng/resources/primeng.css";
+
 /* You can add global styles to this file, and also import other style files */
 $PurpleColor: #3F3C6C;
 $lightBlueColor :#F8FBFF;
@@ -43,8 +46,8 @@ html{
 }
 
 .invalidfield {
-    border: 1px solid red;
-    box-shadow: 0 0 1px 0 red;
+    border: 1px solid rgb(246, 115, 115);
+    // box-shadow: 0 0 1px 0 red;
 }
 
 

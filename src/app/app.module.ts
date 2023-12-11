@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +37,7 @@ import { EditFormComponent } from './dashboard/view-edit-details/edit-form/edit-
 import { ViewCustomerDetailsComponent } from './dashboard/view-edit-details/view-customer-details/view-customer-details.component';
 import { RequestCardComponent } from './dashboard/manager-view/requests/request-card/request-card.component';
 import { WidgetsComponent } from './dashboard/widgets/widgets.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -67,8 +71,17 @@ import { WidgetsComponent } from './dashboard/widgets/widgets.component';
     RequestCardComponent,
     WidgetsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    ButtonModule,
+    ToastModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   providers: [
+    MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
