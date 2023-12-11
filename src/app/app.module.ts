@@ -32,6 +32,7 @@ import { DashboardMainViewComponent } from './dashboard/dashboard-main-view/dash
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditFormComponent } from './dashboard/view-edit-details/edit-form/edit-form.component';
 import { ViewCustomerDetailsComponent } from './dashboard/view-edit-details/view-customer-details/view-customer-details.component';
+import { RequestCardComponent } from './dashboard/manager-view/requests/request-card/request-card.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ViewCustomerDetailsComponent } from './dashboard/view-edit-details/view
     PageNotFoundComponent,
     EditFormComponent,
     ViewCustomerDetailsComponent,
+    RequestCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

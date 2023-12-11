@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DashboardService } from '../../service/dashboard.service';
+import { DashboardService } from 'src/app/dashboard/service/dashboard.service';
 
 @Component({
-  selector: 'app-requests',
-  templateUrl: './requests.component.html',
-  styleUrls: ['./requests.component.scss'],
+  selector: 'app-request-card',
+  templateUrl: './request-card.component.html',
+  styleUrls: ['./request-card.component.scss'],
 })
-export class RequestsComponent {
+export class RequestCardComponent {
   currentTheme: String;
   themeSubscription: Subscription;
 

@@ -1,20 +1,41 @@
+$mainColor: #00A9A4;
+$lightColor: white;
+
 .container{
-    .request-container{
-        margin: 20px;
+    margin: 20px;
         padding:10px;
         background-color: white;
-        min-height: 25vh;
+        height: 85vh;
+        width: 95%;
+        overflow-y: scroll;
+        // for chrome
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        // for edge
+        -ms-overflow-style: none; 
+        // for firefox
+        scrollbar-width: none; 
         border-radius: 20px;
         box-shadow: 0 0px 5px 0 rgba(0,0,0,0.1); 
         .request-header{
+            text-align: center;
             padding: 10px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
+            margin-bottom: 20px;
 
-        }    
+        }  
+    .request-container{
+        display: grid;
+        justify-content: center;
+        gap: 20px;
+        grid-template-columns: auto auto auto;
+        
+        
+          
     }
-    .request-container:hover{
-        box-shadow: 0 0px 10px 0 rgba(0,0,0,0.1);     
-    }
+ 
     
 }
+

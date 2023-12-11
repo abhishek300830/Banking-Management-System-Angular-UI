@@ -1,21 +1,17 @@
-<div class="container">
+<div class="container" [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }">
+  <div class="request-header">Pending Requests</div>
   <div class="request-container">
-    <div class="request-header">Registration Requests</div>
-    <!-- <div class="request">
-      <div class="request-detail">
-        <div class="request-detail-header">Request ID: 1</div>
-        request amount: 1000 date: 12/12/2018 requested by: user1
-      </div>
-      <div class="request-actions">
-        <button class="btn btn-success">Approve</button>
-        <button class="btn btn-danger">Reject</button>
-      </div>
-    </div> -->
-  </div>
-  <div class="request-container">
-    <div class="request-header">Withdraw Requests</div>
-  </div>
-  <div class="request-container">
-    <div class="request-header">Modification Requests</div>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
+    <app-request-card></app-request-card>
   </div>
 </div>
