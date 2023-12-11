@@ -31,6 +31,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this.userSubscription = this.loginService.currentUser$.subscribe((user) => {
       this.user = user;
     });
+    this.elementRef.nativeElement.style.setProperty('--text-color', '#F8FBFF');
   }
 
   changeTheme() {
