@@ -1,0 +1,31 @@
+$lightBlueColor :#F8FBFF;
+$DTDarkColor:#16171B;
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .transaction-heading{
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: 600;
+    }
+    .table-container{
+        width: 90%;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+        .table{
+            t{
+                background-color: red;
+            }
+            > tbody > tr:nth-of-type(odd) > * {
+                background-color: $lightBlueColor;
+              }
+            font-size: 1.1rem;
+            
+        }
+
+    }
+}

@@ -1,3 +1,4 @@
+$AquaColor:#00A9A4;
 
 .navbar{
     position: sticky;
@@ -7,7 +8,7 @@
     z-index: 10;
     .logo-container{
         img{
-            width: 210px;
+            width: 205px;
 
         }
         &:hover{
@@ -23,6 +24,26 @@
 
             }
             
+        }
+        .change-theme-btn{
+            border: 1px solid $AquaColor;
+            display: flex;
+            border-radius: 50px;
+            box-shadow: 0px 0px 2px 0px rgba(0,0,0,.1);
+            margin-right: 3%;
+            overflow: hidden;
+            .icon{
+                padding: 5px 10px;
+                i{
+                    font-size: 25px;
+                    
+                }
+            }
+            .sun{
+                background-color: $AquaColor;
+                color: white;
+            }
+
         }
     }
  
