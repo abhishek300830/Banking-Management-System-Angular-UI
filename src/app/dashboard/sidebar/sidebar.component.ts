@@ -3,6 +3,7 @@ import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
 import { LoginService, UserModel } from 'src/app/login/service/login.service';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/shared/toast.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,14 +20,20 @@ export class SidebarComponent implements OnInit {
     private dashboardService: DashboardService,
     private loginService: LoginService,
     private elementRef: ElementRef,
-    private router: Router
+    private router: Router,
+    private toast: ToastService
   ) {}
 
   ngOnInit() {
     this.userSubscription = this.loginService.currentUser$.subscribe((user) => {
       this.user = user;
     });
-    this.elementRef.nativeElement.style.setProperty('--text-color', '#F8FBFF');
+    if (this.currentTheme === 'Light') {
+      this.elementRef.nativeElement.style.setProperty(
+        '--text-color',
+        '#F8FBFF'
+      );
+    }
   }
 
   changeTheme() {
@@ -57,5 +64,6 @@ export class SidebarComponent implements OnInit {
     this.loginService.currentUser$.next(null);
     sessionStorage.clear();
     this.router.navigate(['/login']);
+    this.toast.showSuccess('Logout Successfully.');
   }
 }

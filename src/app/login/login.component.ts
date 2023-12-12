@@ -29,7 +29,7 @@ export class LoginComponent {
         this.router.navigate(['/dashboard']);
       },
       error: (error) => {
-        this.toast.showError(error.error.detail.error.message);
+        this.toast.showError('Invalid Username or Password.');
         console.log('response', error);
         this.router.navigate(['/login']);
       },

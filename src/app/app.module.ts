@@ -38,6 +38,7 @@ import { ViewCustomerDetailsComponent } from './dashboard/view-edit-details/view
 import { RequestCardComponent } from './dashboard/manager-view/requests/request-card/request-card.component';
 import { WidgetsComponent } from './dashboard/widgets/widgets.component';
 import { MessageService } from 'primeng/api';
+import { AccountDetailComponent } from './dashboard/customer-view/account-detail/account-detail.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { MessageService } from 'primeng/api';
     ViewCustomerDetailsComponent,
     RequestCardComponent,
     WidgetsComponent,
+    AccountDetailComponent,
   ],
   imports: [
     ButtonModule,
