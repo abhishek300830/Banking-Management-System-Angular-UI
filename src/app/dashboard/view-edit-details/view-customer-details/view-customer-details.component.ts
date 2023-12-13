@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DashboardService } from '../../service/dashboard.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-view-customer-details',
@@ -10,6 +8,8 @@ import { Subscription } from 'rxjs';
 export class ViewCustomerDetailsComponent {
   @Output() isEditMode = new EventEmitter();
   @Input() currentTheme: String;
+
+  @Input() customerDetails: Object;
 
   changeEditMode() {
     this.isEditMode.emit(true);

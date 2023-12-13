@@ -28,4 +28,24 @@ export class DashboardService {
       amount: amount,
     });
   }
+
+  registerCustomer(customerDetails: Object) {
+    return this.http.post('http://127.0.0.1:8000/customer', customerDetails);
+  }
+
+  getCustomerDetails(accountNumber: number) {
+    return this.http.get(`http://127.0.0.1:8000/customer/${accountNumber}`);
+  }
+
+  modifyCustomerDetails(
+    accountNumber: number,
+    attibute_name: string,
+    attribute_value: string
+  ) {
+    return this.http.put('http://127.0.0.1:8000/customer', {
+      account_no: accountNumber,
+      attribute_to_update: attibute_name,
+      attribute_value: attribute_value,
+    });
+  }
 }

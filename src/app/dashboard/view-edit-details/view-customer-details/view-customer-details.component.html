@@ -2,7 +2,17 @@
   class="container p-lg-5"
   [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
 >
-  <div class="row img-container">
+  <div class="no-user-selected" *ngIf="!customerDetails">
+    <img src="\assets\images\view-customer-details\people_search.svg" alt="" />
+    <div class="text-center mt-3">
+      <h3 class="text-center">No User Selected</h3>
+      <p class="text-center">
+        Please search a customer in the above search box.
+      </p>
+    </div>
+  </div>
+
+  <div class="row img-container" *ngIf="customerDetails">
     <img src="\assets\images\view-customer-details\male.svg" alt="" />
   </div>
   <div
@@ -10,6 +20,7 @@
     [ngStyle]="{
       'background-color': currentTheme === 'Dark' ? '#16171b' : '#f8fbff'
     }"
+    *ngIf="customerDetails"
   >
     <div class="left-side">
       <div>Name :</div>
@@ -20,12 +31,12 @@
       <div>ID Number :</div>
     </div>
     <div class="right-side">
-      <div>Abhishek</div>
-      <div>Abhishek@mail.com</div>
-      <div>8967567867</div>
-      <div>Male</div>
-      <div>Pan Card</div>
-      <div>746582648363</div>
+      <div>{{ customerDetails["Name"] }}</div>
+      <div>{{ customerDetails["Email"] }}</div>
+      <div>{{ customerDetails["Phone"] }}</div>
+      <div>{{ customerDetails["Gender"] }}</div>
+      <div>{{ customerDetails["ID Type"] }}</div>
+      <div>{{ customerDetails["ID Number"] }}</div>
     </div>
   </div>
   <div class="text-center mt-3">

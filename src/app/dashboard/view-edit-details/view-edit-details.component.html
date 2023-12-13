@@ -1,13 +1,14 @@
 <div class="container">
   <div class="search-container">
     <input
+      [(ngModel)]="accountNumber"
       type="search"
       name="search"
       id="search"
       placeholder="Enter Customer Acount Number"
     />
 
-    <button class="btn btn-primary submit-btn">
+    <button class="btn btn-primary submit-btn" (click)="onSearch()">
       <i class="fa-solid fa-magnifying-glass"></i> Search
     </button>
   </div>
@@ -16,10 +17,12 @@
     *ngIf="isEditMode"
     (isEditMode)="changeEditMode($event)"
     [currentTheme]="currentTheme"
+    [accountNumber]="accountNumber"
   ></app-edit-form>
   <app-view-customer-details
     *ngIf="!isEditMode"
     (isEditMode)="changeEditMode($event)"
     [currentTheme]="currentTheme"
+    [customerDetails]="customerDetails"
   ></app-view-customer-details>
 </div>

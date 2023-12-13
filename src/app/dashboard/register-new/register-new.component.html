@@ -103,7 +103,7 @@
         <i class="fas fa-phone"></i>
         <input
           ngModel
-          type="number"
+          type="text"
           class="form-control"
           id="phone"
           name="phone"
@@ -134,8 +134,9 @@
               registerNewForm.controls.gender?.touched
           }"
         >
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </select>
       </div>
     </div>
@@ -147,7 +148,7 @@
           ngModel
           class="form-select"
           id="id-proof-type"
-          name="id-proof-type"
+          name="idProofType"
           required
           [ngClass]="{
             invalidfield:
@@ -155,8 +156,8 @@
               registerNewForm.controls['id-proof-type']?.touched
           }"
         >
-          <option value="aadhar-card">Aadhar Card</option>
-          <option value="pan-card">Pan Card</option>
+          <option value="Aadhar Card">Aadhar Card</option>
+          <option value="Pan Card">Pan Card</option>
         </select>
       </div>
     </div>
@@ -169,7 +170,7 @@
           type="text"
           class="form-control"
           id="id-proof-number"
-          name="id-proof-number"
+          name="idProofNumber"
           required
           placeholder="Enter ID proof number"
           pattern="[0-9]+"

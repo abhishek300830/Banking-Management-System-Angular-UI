@@ -12,7 +12,7 @@
       <div class="input-with-icon">
         <i class="fa-solid fa-user"></i>
         <input
-          ngModel
+          [(ngModel)]="accountNumber"
           type="number"
           class="form-control"
           id="accountnumber"
@@ -142,7 +142,7 @@
         class="btn btn-primary submit-btn"
         [disabled]="customerEditForm.invalid"
       >
-        <i class="fas fa-user-plus"></i> Add Customer
+        <i class="fas fa-user-edit"></i> Update Customer
       </button>
     </div>
   </form>
