@@ -14,4 +14,18 @@ export class DashboardService {
       new_password: newPassword,
     });
   }
+
+  depositAmount(accountNumber: number, amount: number) {
+    return this.http.put('http://127.0.0.1:8000/account/deposit', {
+      account_number: accountNumber,
+      amount: amount,
+    });
+  }
+
+  withdrawAmount(accountNumber: number, amount: number) {
+    return this.http.put('http://127.0.0.1:8000/account/withdraw', {
+      account_number: accountNumber,
+      amount: amount,
+    });
+  }
 }

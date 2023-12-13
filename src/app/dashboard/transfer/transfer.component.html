@@ -1,7 +1,7 @@
 <div class="container" [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }">
   <div class="row d-flex justify-content-center align-items-center">
     <div class="transfer-form col-lg-10 col-sm-10 p-lg-4">
-      <form #transferform="ngForm">
+      <form #transferform="ngForm" (ngSubmit)="onSubmit(transferform)">
         <div class="form-heading mb-4">Transfer</div>
         <div class="input-with-icon mb-3">
           <select

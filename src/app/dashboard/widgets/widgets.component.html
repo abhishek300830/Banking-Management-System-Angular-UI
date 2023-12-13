@@ -2,7 +2,19 @@
   class="widget-container"
   [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
 >
-  <div class="view-customer" *ngIf="isMorning">
+  <div
+    class="view-customer"
+    *ngIf="role === 'manager'"
+    routerLink="/dashboard/requests"
+  >
+    <div class="img">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div class="text">
+      <div>Approve Request</div>
+    </div>
+  </div>
+  <div class="view-customer" *ngIf="role === 'cashier'">
     <div class="img">
       <i class="fa-solid fa-sun"></i>
     </div>
@@ -10,15 +22,7 @@
       <div>Good Morning</div>
     </div>
   </div>
-  <div class="view-customer" *ngIf="!isMorning">
-    <div class="img">
-      <i class="fa-solid fa-moon"></i>
-    </div>
-    <div class="text">
-      <div>Good Evening</div>
-    </div>
-  </div>
-  <div class="view-customer">
+  <div class="view-customer" routerLink="/dashboard/register">
     <div class="img">
       <i class="fa-solid fa-user-plus"></i>
     </div>
@@ -26,7 +30,7 @@
       <div>Register Customer</div>
     </div>
   </div>
-  <div class="view-customer">
+  <div class="view-customer" routerLink="/dashboard/editcustomer">
     <div class="img">
       <i class="fa-solid fa-people-roof"></i>
     </div>

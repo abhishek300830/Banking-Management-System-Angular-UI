@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./widgets.component.scss'],
 })
 export class WidgetsComponent {
-  isMorning: boolean = true;
+  @Input() role: string;
   @Input() currentTheme: string;
 }
