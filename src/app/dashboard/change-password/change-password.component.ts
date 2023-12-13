@@ -1,7 +1,8 @@
 import { NgForm } from '@angular/forms';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../service/dashboard.service';
+import { ToastService } from 'src/app/shared/toast.service';
 
 @Component({
   selector: 'app-change-password',
@@ -12,7 +13,10 @@ export class ChangePasswordComponent {
   currentTheme: string;
   themeSubscription: Subscription;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(
+    private dashboardService: DashboardService,
+    private toast: ToastService
+  ) {}
 
   ngOnInit() {
     this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
@@ -23,7 +27,26 @@ export class ChangePasswordComponent {
   }
 
   onSubmit(changePasswordForm: NgForm) {
-    console.log(changePasswordForm);
+    const oldpassword = changePasswordForm.value.oldpassword;
+    const newpassword = changePasswordForm.value.newpassword;
+    this.dashboardService.changePassword(oldpassword, newpassword).subscribe({
+      next: (response) => {
+        if (response) {
+          this.toast.showSuccess('Password Changed Successfully');
+        }
+      },
+      error: (error) => {
+        if (error.status === 404) {
+          this.toast.showError(
+            'Include Uppercase, Lowercase letters, numbers and special characters in your password. '
+          );
+        } else if (error.status === 403) {
+          console.log(error);
+        } else if (error.status === 401) {
+          this.toast.showError('Old password is incorrect.');
+        }
+      },
+    });
   }
 
   ngOnDestroy() {

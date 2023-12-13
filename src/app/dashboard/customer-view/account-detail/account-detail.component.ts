@@ -1,10 +1,50 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CustomerService } from '../service/customer.service';
+import { LoginService } from 'src/app/login/service/login.service';
+import { ToastService } from 'src/app/shared/toast.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account-detail',
   templateUrl: './account-detail.component.html',
   styleUrls: ['./account-detail.component.scss'],
 })
-export class AccountDetailComponent {
+export class AccountDetailComponent implements OnInit {
   @Input() currentTheme: string;
+  accountNumber: number;
+  accountBalance: number;
+  balanceOnHold: number;
+
+  isTransferedSubscription: Subscription;
+
+  constructor(
+    private customerService: CustomerService,
+    private toast: ToastService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.showCustomerBalance();
+    this.isTransferedSubscription =
+      this.customerService.isAmountTransfered$.subscribe((isTransfered) => {
+        if (isTransfered) {
+          this.showCustomerBalance();
+        }
+      });
+  }
+  showCustomerBalance() {
+    this.customerService.getCustomerBalance().subscribe({
+      next: (data) => {
+        this.accountNumber = data['account_number'];
+        this.accountBalance = data['account_balance'];
+        this.balanceOnHold = data['pending_balance'];
+      },
+      error: (error) => {
+        this.toast.showError('Error Occured. Please try again.');
+        console.log('response', error);
+        this.router.navigate(['/login']);
+      },
+    });
+  }
 }

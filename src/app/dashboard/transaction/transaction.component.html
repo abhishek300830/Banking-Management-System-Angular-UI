@@ -13,45 +13,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>5000</td>
-          <td>2023-08-29</td>
-          <td>Debit</td>
-          <td>&#8377; 2000</td>
-          <td>Manager</td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>5000</td>
-          <td>2023-08-29</td>
-          <td>Credit</td>
-          <td>&#8377; 2000</td>
-          <td>Manager</td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>5000</td>
-          <td>2023-08-29</td>
-          <td>Debit</td>
-          <td>&#8377; 2000</td>
-          <td>Manager</td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>5000</td>
-          <td>2023-08-29</td>
-          <td>Debit</td>
-          <td>&#8377; 2000</td>
-          <td>Manager</td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>5000</td>
-          <td>2023-08-29</td>
-          <td>Debit</td>
-          <td>&#8377; 2000</td>
-          <td>Manager</td>
+        <tr *ngFor="let transaction of transactions; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ transaction["account_number"] }}</td>
+          <td>{{ transaction["date_and_time"] | date }}</td>
+          <td>{{ transaction["transaction_type"] }}</td>
+          <td>&#8377; {{ transaction["amount"] }}</td>
+          <td>{{ transaction["done_by"] }}</td>
         </tr>
       </tbody>
     </table>

@@ -17,7 +17,6 @@ export class LoginInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const token = this.loginService.user.jwt_token;
-    console.log('interceptor');
     if (!token) {
       return next.handle(request);
     }

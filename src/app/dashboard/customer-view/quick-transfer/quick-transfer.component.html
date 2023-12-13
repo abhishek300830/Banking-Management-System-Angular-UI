@@ -1,18 +1,28 @@
 <div class="container" [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }">
   <div class="row d-flex justify-content-center align-items-center">
     <div class="quick-transfer-form col-lg-10 col-sm-10 p-lg-4">
-      <form #quickTransferForm="ngForm">
+      <form
+        #quickTransferForm="ngForm"
+        (ngSubmit)="onSubmit(quickTransferForm)"
+      >
         <div class="form-heading mb-4">Quick Transfer</div>
         <div class="input-with-icon mb-3"></div>
-        <label for="account-number" class="form-label">Account Number</label>
+        <label for="account" class="form-label">Account Number</label>
         <div class="input-with-icon mb-3">
           <input
             ngModel
-            name="account-number"
+            name="account"
             type="number"
             class="form-control"
-            id="account-number"
+            id="account"
             aria-describedby="accountnumberHelp"
+            placeholder="Enter Account Number"
+            required
+            [ngClass]="{
+              invalidfield:
+                quickTransferForm.controls['account']?.invalid &&
+                quickTransferForm.controls['account']?.touched
+            }"
           />
           <i class="fa-solid fa-user"></i>
         </div>
@@ -25,12 +35,23 @@
             type="number"
             class="form-control"
             id="amount"
+            placeholder="Enter Amount"
+            required
+            [ngClass]="{
+              invalidfield:
+                quickTransferForm.controls['amount']?.invalid &&
+                quickTransferForm.controls['amount']?.touched
+            }"
           />
           <i class="fa-solid fa-sack-dollar"></i>
         </div>
 
         <div class="text-center">
-          <button class="btn submit-btn" type="submit">
+          <button
+            class="btn submit-btn"
+            type="submit"
+            [disabled]="quickTransferForm.invalid"
+          >
             <i class="fa-solid fa-circle-check"></i>
             Transfer
           </button>
