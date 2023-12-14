@@ -41,8 +41,7 @@ export class EditFormComponent {
       )
       .subscribe({
         next: (response) => {
-          this.toast.showSuccess('Customer details updated successfully');
-          console.log(response);
+          this.toast.showSuccess(response['details']);
         },
         error: (error) => {
           if (error.status === 403) {

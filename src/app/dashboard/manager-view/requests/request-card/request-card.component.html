@@ -23,23 +23,27 @@
       </div>
     </div>
     <div class="description" *ngIf="registrationRequest">
-      Name - Rahul <br />
-      Email - rahul12345@gmail.com <br />Phone - 9876453626 <br />
-      ID Type - Aadhar Card <br />
-      ID Number - 65484663748767 <br />Gender - Male <br />
+      Name - {{ registrationRequest["name"] }} <br />
+      Email - {{ registrationRequest["email"] }} <br />Phone -
+      {{ registrationRequest["phone_no"] }} <br />
+      ID Type - {{ registrationRequest["id_proof_type"] }} <br />
+      ID Number - {{ registrationRequest["id_proof"] }} <br />Gender -
+      {{ registrationRequest["gender"] }}
+      <br />
     </div>
     <div class="description" *ngIf="modificationRequest">
-      Request ID : 5 <br />
-      Account Number : 5000 <br />
-      Detail to update : name <br />
-      Detail value : Tusharr <br />
+      Request ID : {{ modificationRequest["request_id"] }} <br />
+      Account Number : {{ modificationRequest["user_id"] * 1000 }} <br />
+      Detail to update : {{ modificationRequest["attribute_to_update"] }} <br />
+      Detail value : {{ modificationRequest["attribute_value"] }} <br />
     </div>
+
     <div class="description" *ngIf="withdrawnRequest">
-      Request ID : 25 <br />
-      AccountNumber : 5000 <br />
-      Amount to Debit : 12000 <br />
-      Request by : Cashier <br />
-      date : 11-12-2023 <br />
+      Request ID : {{ withdrawnRequest["request_id"] }} <br />
+      AccountNumber : {{ withdrawnRequest["user_id"] * 1000 }} <br />
+      Amount to Debit : {{ withdrawnRequest["debited_amount"] }} <br />
+      Request by : {{ withdrawnRequest["requested_by"] }} <br />
+      date : {{ withdrawnRequest["date"] | date }} <br />
       <!-- user_id : 6 -->
     </div>
     <div class="buttons-container text-center">
