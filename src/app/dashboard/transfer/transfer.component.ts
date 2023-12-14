@@ -19,7 +19,7 @@ export class TransferComponent {
   ) {}
 
   onSubmit(transferForm: NgForm) {
-    console.log(transferForm.value);
+    // console.log(transferForm.value);
     const transferType = transferForm.value['transfertype'];
     const accountNumber = transferForm.value['account-number'];
     const amount = transferForm.value['amount'];
@@ -35,7 +35,7 @@ export class TransferComponent {
             this.toast.showError('Please login again');
             this.router.navigate(['/login']);
           } else if (error.status === 404) {
-            this.toast.showError(error.error.detail);
+            this.toast.showError(error.error.detail.error.message);
           }
         },
       });
@@ -49,7 +49,7 @@ export class TransferComponent {
             this.toast.showError('Please login again');
             this.router.navigate(['/login']);
           } else if (error.status === 404) {
-            this.toast.showError(error.error.detail);
+            this.toast.showError(error.error.detail.error.message);
           }
         },
       });

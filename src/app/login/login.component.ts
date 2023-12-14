@@ -10,6 +10,8 @@ import { ToastService } from '../shared/toast.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  hide: boolean = true;
+
   constructor(
     private loginService: LoginService,
     private router: Router,

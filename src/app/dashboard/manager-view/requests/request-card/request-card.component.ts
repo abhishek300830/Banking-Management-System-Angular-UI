@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class RequestCardComponent {
   @Input() currentTheme: String;
+
+  @Input() registrationRequest: Object;
+  @Input() modificationRequest: Object;
+  @Input() withdrawnRequest: Object;
 }

@@ -1,9 +1,20 @@
 <div class="container" [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }">
   <div class="request-header">Pending Requests</div>
   <div class="request-container">
-    <app-request-card [currentTheme]="currentTheme"></app-request-card>
-    <app-request-card [currentTheme]="currentTheme"></app-request-card>
-    <app-request-card [currentTheme]="currentTheme"></app-request-card>
-    <app-request-card [currentTheme]="currentTheme"></app-request-card>
+    <app-request-card
+      [currentTheme]="currentTheme"
+      *ngFor="let registrationRequest of registrationRequests"
+      [registrationRequest]="registrationRequest"
+    ></app-request-card>
+    <app-request-card
+      [currentTheme]="currentTheme"
+      *ngFor="let withdrawnRequest of withdrawnRequests"
+      [withdrawnRequest]="withdrawnRequest"
+    ></app-request-card>
+    <app-request-card
+      [currentTheme]="currentTheme"
+      *ngFor="let modificationRequest of modificationRequests"
+      [modificationRequest]="modificationRequest"
+    ></app-request-card>
   </div>
 </div>

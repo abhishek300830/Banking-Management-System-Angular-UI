@@ -12,13 +12,33 @@
       <div class="left-side">
         <div>Request Type :</div>
       </div>
-      <div class="right-side">
+      <div class="right-side" *ngIf="registrationRequest">
+        <div>Registration</div>
+      </div>
+      <div class="right-side" *ngIf="modificationRequest">
+        <div>Modification</div>
+      </div>
+      <div class="right-side" *ngIf="withdrawnRequest">
         <div>Withdraw</div>
       </div>
     </div>
-    <div class="description">
+    <div class="description" *ngIf="registrationRequest">
+      Name - Rahul <br />
+      Email - rahul12345@gmail.com <br />Phone - 9876453626 <br />
+      ID Type - Aadhar Card <br />
+      ID Number - 65484663748767 <br />Gender - Male <br />
+    </div>
+    <div class="description" *ngIf="modificationRequest">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque
       Expedita, quo aspernatur.
+    </div>
+    <div class="description" *ngIf="withdrawnRequest">
+      Request ID : 25 <br />
+      AccountNumber : 5000 <br />
+      Amount to Debit : 12000 <br />
+      Request by : Cashier <br />
+      date : 11-12-2023 <br />
+      <!-- user_id : 6 -->
     </div>
     <div class="buttons-container text-center">
       <button class="btn submit-btn btn-success m-1">Approve</button>

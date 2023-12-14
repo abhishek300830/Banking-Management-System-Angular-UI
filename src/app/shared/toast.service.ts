@@ -11,7 +11,6 @@ export class ToastService {
       severity: 'success',
       summary: 'Success',
       detail: message,
-      icon: 'pi pi-check',
     });
   }
 

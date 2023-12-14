@@ -29,7 +29,7 @@
           <input
             ngModel
             name="password"
-            type="password"
+            [type]="hide ? 'password' : 'text'"
             class="form-control"
             id="password"
             pattern="[a-z0-9A-Z!@#$%^&*]+"

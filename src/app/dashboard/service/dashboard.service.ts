@@ -48,4 +48,8 @@ export class DashboardService {
       attribute_value: attribute_value,
     });
   }
+
+  getAllRequests() {
+    return this.http.get('http://127.0.0.1:8000/account/requests');
+  }
 }
