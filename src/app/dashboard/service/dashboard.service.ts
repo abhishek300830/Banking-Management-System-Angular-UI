@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DashboardService {
   currentTheme$ = new BehaviorSubject('Light');
+  onHandleRequest$ = new Subject();
 
   constructor(private http: HttpClient) {}
 
@@ -51,5 +52,34 @@ export class DashboardService {
 
   getAllRequests() {
     return this.http.get('http://127.0.0.1:8000/account/requests');
+  }
+
+  approveModificationRequest(requestId: number, status: string) {
+    return this.http.put('http://127.0.0.1:8000/account/requests', {
+      request_type: 'modification_request',
+      request_id: requestId,
+      status: status,
+    });
+  }
+
+  approveWithdrawRequest(
+    requestId: number,
+    status: string,
+    comment: string = 'Okay'
+  ) {
+    return this.http.put('http://127.0.0.1:8000/account/requests', {
+      request_type: 'withdrawn_request',
+      request_id: requestId,
+      status: status,
+      comment: comment,
+    });
+  }
+
+  approveRegistrationRequest(userId: number, status: string) {
+    return this.http.put('http://127.0.0.1:8000/account/requests', {
+      request_type: 'registration_request',
+      user_id: userId,
+      status: status,
+    });
   }
 }

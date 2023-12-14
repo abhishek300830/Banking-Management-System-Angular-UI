@@ -38,7 +38,7 @@ export class RegisterNewComponent {
     } = registraitonForm.value;
 
     const UserDetailsObject = {
-      username: '1',
+      username: username,
       password: password,
       name: name,
       email: email,

@@ -27,7 +27,14 @@ export class RequestsComponent {
         this.currentTheme = theme;
       }
     );
+    this.fetchAllRequests();
 
+    this.dashboardService.onHandleRequest$.subscribe((response) => {
+      this.fetchAllRequests();
+    });
+  }
+
+  fetchAllRequests() {
     this.dashboardService.getAllRequests().subscribe({
       next: (response) => {
         this.modificationRequests = response['modification_requests'];

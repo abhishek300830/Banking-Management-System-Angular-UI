@@ -42,7 +42,6 @@
           name="password"
           required
           minlength="8"
-          maxlength="20"
           placeholder="Enter password"
           pattern="[a-zA-Z0-9!@#$%^&*]+"
           autocomplete="current-password"
@@ -152,8 +151,8 @@
           required
           [ngClass]="{
             invalidfield:
-              registerNewForm.controls['id-proof-type']?.invalid &&
-              registerNewForm.controls['id-proof-type']?.touched
+              registerNewForm.controls['idProofType']?.invalid &&
+              registerNewForm.controls['idProofType']?.touched
           }"
         >
           <option value="Aadhar Card">Aadhar Card</option>
@@ -176,8 +175,8 @@
           pattern="[0-9]+"
           [ngClass]="{
             invalidfield:
-              registerNewForm.controls['id-proof-number']?.invalid &&
-              registerNewForm.controls['id-proof-number']?.touched
+              registerNewForm.controls['idProofNumber']?.invalid &&
+              registerNewForm.controls['idProofNumber']?.touched
           }"
         />
       </div>
