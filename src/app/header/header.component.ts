@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent {
   loginpage = false;
+  @Input() transparentHeader = true;
 
   constructor(private route: ActivatedRoute) {}
 

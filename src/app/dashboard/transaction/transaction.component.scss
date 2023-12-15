@@ -18,6 +18,16 @@ $AquaColor:#00A9A4;
         justify-content: space-around;
         align-items: center;
         padding: 10px 0px;
+        div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .date-picker{
+                margin-left: 20px;
+            }
+        }
+        
     }
     .table-container{
         min-height: 75vh;
