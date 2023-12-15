@@ -1,20 +1,57 @@
-<div class="container" [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }">
-  <div class="request-header">Pending Requests</div>
-  <div class="request-container">
-    <app-request-card
-      [currentTheme]="currentTheme"
-      *ngFor="let registrationRequest of registrationRequests"
-      [registrationRequest]="registrationRequest"
-    ></app-request-card>
-    <app-request-card
-      [currentTheme]="currentTheme"
-      *ngFor="let withdrawnRequest of withdrawnRequests"
-      [withdrawnRequest]="withdrawnRequest"
-    ></app-request-card>
-    <app-request-card
-      [currentTheme]="currentTheme"
-      *ngFor="let modificationRequest of modificationRequests"
-      [modificationRequest]="modificationRequest"
-    ></app-request-card>
+<div class="container">
+  <div
+    class="request-header"
+    [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
+  >
+    <div>Pending Requests</div>
+    <div>
+      <div class="input-with-icon mb-3">
+        <select
+          [(ngModel)]="filteredRequests"
+          class="form-select"
+          required
+          name="transfertype"
+        >
+          <option value="" disabled selected hidden>Filter Requests</option>
+          <option value="withdraw">Withdraw</option>
+          <option value="registration">Registration</option>
+          <option value="modification">Modification</option>
+        </select>
+        <i class="fa-solid fa-money-bill-transfer"></i>
+      </div>
+    </div>
+  </div>
+  <div
+    class="request-container"
+    [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
+  >
+    <ng-container
+      *ngIf="filteredRequests === 'registration' || filteredRequests === ''"
+    >
+      <app-request-card
+        [currentTheme]="currentTheme"
+        *ngFor="let registrationRequest of registrationRequests"
+        [registrationRequest]="registrationRequest"
+      ></app-request-card>
+    </ng-container>
+
+    <ng-container
+      *ngIf="filteredRequests === 'withdraw' || filteredRequests === ''"
+    >
+      <app-request-card
+        [currentTheme]="currentTheme"
+        *ngFor="let withdrawnRequest of withdrawnRequests"
+        [withdrawnRequest]="withdrawnRequest"
+      ></app-request-card>
+    </ng-container>
+    <ng-container
+      *ngIf="filteredRequests === 'modification' || filteredRequests === ''"
+    >
+      <app-request-card
+        [currentTheme]="currentTheme"
+        *ngFor="let modificationRequest of modificationRequests"
+        [modificationRequest]="modificationRequest"
+      ></app-request-card>
+    </ng-container>
   </div>
 </div>
