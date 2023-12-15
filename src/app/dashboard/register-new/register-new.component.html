@@ -20,7 +20,7 @@
           minlength="5"
           maxlength="20"
           placeholder="Enter username"
-          pattern="[a-zA-Z0-9]+"
+          pattern="[a-zA-Z0-9_]+"
           autocomplete="username"
           [ngClass]="{
             invalidfield:
@@ -43,7 +43,7 @@
           required
           minlength="8"
           placeholder="Enter password"
-          pattern="[a-zA-Z0-9!@#$%^&*]+"
+          pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
           autocomplete="current-password"
           [ngClass]="{
             invalidfield:
@@ -51,7 +51,6 @@
               registerNewForm.controls.password?.touched
           }"
         />
-        <!-- pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$" -->
       </div>
     </div>
     <div class="col-md-5">
@@ -66,7 +65,8 @@
           name="name"
           required
           placeholder="Enter name"
-          pattern="[a-zA-Z\s]+"
+          maxlength="30"
+          pattern="[A-Za-z ]+"
           [ngClass]="{
             invalidfield:
               registerNewForm.controls.name?.invalid &&
@@ -87,6 +87,7 @@
           name="email"
           required
           placeholder="Enter email"
+          pattern="^[a-zA-Z][a-zA-Z0-9]+\@[a-zA-Z]+\.(in|net|com)"
           email
           [ngClass]="{
             invalidfield:
@@ -133,6 +134,7 @@
               registerNewForm.controls.gender?.touched
           }"
         >
+          <option value="" selected disabled hidden>Select Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Other</option>
@@ -155,6 +157,7 @@
               registerNewForm.controls['idProofType']?.touched
           }"
         >
+          <option value="" selected disabled hidden>Select Proof ID</option>
           <option value="Aadhar Card">Aadhar Card</option>
           <option value="Pan Card">Pan Card</option>
         </select>
@@ -172,7 +175,7 @@
           name="idProofNumber"
           required
           placeholder="Enter ID proof number"
-          pattern="[0-9]+"
+          pattern="[0-9]{5,}"
           [ngClass]="{
             invalidfield:
               registerNewForm.controls['idProofNumber']?.invalid &&
@@ -182,11 +185,7 @@
       </div>
     </div>
     <div class="col-12 text-center">
-      <button
-        type="submit"
-        class="btn btn-primary submit-btn"
-        [disabled]="registerNewForm.invalid"
-      >
+      <button type="submit" class="btn btn-primary submit-btn">
         <i class="fas fa-user-plus"></i> Add Customer
       </button>
     </div>

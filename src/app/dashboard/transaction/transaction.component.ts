@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./transaction.component.scss'],
 })
 export class TransactionComponent {
+  currentPage: number = 1;
   constructor(
     private customerService: CustomerService,
     private toast: ToastService

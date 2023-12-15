@@ -19,7 +19,10 @@ export class TransferComponent {
   ) {}
 
   onSubmit(transferForm: NgForm) {
-    // console.log(transferForm.value);
+    if (transferForm.invalid) {
+      this.toast.showError('Please fill all the fields');
+      return;
+    }
     const transferType = transferForm.value['transfertype'];
     const accountNumber = transferForm.value['account-number'];
     const amount = transferForm.value['amount'];

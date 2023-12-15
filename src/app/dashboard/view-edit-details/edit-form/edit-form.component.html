@@ -19,6 +19,7 @@
           name="accountnumber"
           required
           pattern="[0-9]+"
+          placeholder="Enter Account Number"
           [ngClass]="{
             invalidfield:
               customerEditForm.controls.accountnumber?.invalid &&
@@ -132,7 +133,7 @@
     <div class="col-12 text-center">
       <button
         type="submit"
-        class="btn btn-primary submit-btn me-3"
+        class="btn btn-primary submit-btn cancel-btn me-3"
         (click)="changeEditMode()"
       >
         <i class="fa-solid fa-circle-xmark"></i> Cancel

@@ -11,7 +11,7 @@ import { ToastService } from 'src/app/shared/toast.service';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  @Input() currentTheme: String;
+  currentTheme: String;
 
   userSubscription: Subscription;
   user: UserModel;
@@ -28,28 +28,21 @@ export class SidebarComponent implements OnInit {
     this.userSubscription = this.loginService.currentUser$.subscribe((user) => {
       this.user = user;
     });
-    if (this.currentTheme === 'Light') {
-      this.elementRef.nativeElement.style.setProperty(
-        '--text-color',
-        '#F8FBFF'
-      );
-    }
-  }
 
-  changeTheme() {
-    if (this.currentTheme === 'Light') {
-      this.dashboardService.currentTheme$.next('Dark');
-      this.elementRef.nativeElement.style.setProperty(
-        '--text-color',
-        '#16171B'
-      );
-    } else {
-      this.dashboardService.currentTheme$.next('Light');
-      this.elementRef.nativeElement.style.setProperty(
-        '--text-color',
-        '#F8FBFF'
-      );
-    }
+    this.dashboardService.currentTheme$.subscribe((theme) => {
+      this.currentTheme = theme;
+      if (this.currentTheme === 'Dark') {
+        this.elementRef.nativeElement.style.setProperty(
+          '--text-color',
+          '#16171B'
+        );
+      } else {
+        this.elementRef.nativeElement.style.setProperty(
+          '--text-color',
+          '#F8FBFF'
+        );
+      }
+    });
   }
 
   getClass() {

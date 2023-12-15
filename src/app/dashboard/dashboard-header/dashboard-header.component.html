@@ -57,8 +57,20 @@
         {{ username }}
       </div>
       <div class="change-theme-btn">
-        <div class="icon moon"><i class="fa-solid fa-moon"></i></div>
-        <div class="icon sun"><i class="fa-solid fa-sun"></i></div>
+        <div
+          class="icon moon"
+          [ngClass]="{ active: currentTheme === 'Dark' }"
+          (click)="changeTheme()"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </div>
+        <div
+          class="icon sun"
+          [ngClass]="{ active: currentTheme === 'Light' }"
+          (click)="changeTheme()"
+        >
+          <i class="fa-solid fa-sun"></i>
+        </div>
       </div>
     </div>
   </div>

@@ -11,6 +11,7 @@ import { ToastService } from 'src/app/shared/toast.service';
 export class RequestsComponent {
   currentTheme: String;
   themeSubscription: Subscription;
+  // currentPage: number = 1;
 
   modificationRequests: [];
   registrationRequests: [];

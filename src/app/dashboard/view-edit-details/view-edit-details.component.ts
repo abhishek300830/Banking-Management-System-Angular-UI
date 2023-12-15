@@ -36,7 +36,7 @@ export class ViewEditDetailsComponent {
 
   onSearch() {
     this.isEditMode = false;
-    if (isNaN(this.accountNumber)) {
+    if (isNaN(this.accountNumber) || this.accountNumber === undefined) {
       this.toast.showError('Please enter a valid account number');
       return;
     }

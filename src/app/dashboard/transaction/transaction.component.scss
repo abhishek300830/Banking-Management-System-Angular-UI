@@ -1,5 +1,6 @@
 $lightBlueColor :#F8FBFF;
 $DTDarkColor:#16171B;
+$AquaColor:#00A9A4;
 
 .container{
     display: flex;
@@ -26,6 +27,16 @@ $DTDarkColor:#16171B;
             font-size: 1.1rem;
             
         }
+
+    .my-pagination ::ng-deep .ngx-pagination .ng-star-inserted:hover {
+        border-radius: 50px;
+    }
+
+    .my-pagination ::ng-deep .ngx-pagination .current {
+        background: $AquaColor;
+        border-radius: 50px;
+      }
+    
 
     }
 }

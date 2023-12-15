@@ -15,7 +15,9 @@
                 transferform.controls.transfertype?.touched
             }"
           >
-            <!-- <option disabled>Choose Transfer Type</option> -->
+            <option value="" disabled selected hidden>
+              Choose Transfer Type
+            </option>
             <option value="withdraw">Withdraw</option>
             <option value="deposit">Deposit</option>
           </select>
@@ -32,6 +34,7 @@
             aria-describedby="accountnumberHelp"
             required
             pattern="[0-9]+"
+            placeholder="Enter Account Number"
             [ngClass]="{
               invalidfield:
                 transferform.controls['account-number']?.invalid &&
@@ -51,6 +54,7 @@
             id="amount"
             required
             pattern="[0-9]+"
+            placeholder="Enter Amount"
             [ngClass]="{
               invalidfield:
                 transferform.controls.amount?.invalid &&
@@ -61,11 +65,7 @@
         </div>
 
         <div class="text-center">
-          <button
-            class="btn submit-btn"
-            type="submit"
-            [disabled]="transferform.invalid"
-          >
+          <button class="btn submit-btn" type="submit">
             <i class="fa-solid fa-circle-check"></i>
             Transfer
           </button>

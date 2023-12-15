@@ -9,12 +9,18 @@
           <th scope="col">Date</th>
           <th scope="col">Transaction Type</th>
           <th scope="col">Amount</th>
-          <th scope="col">Completed By</th>
+          <th scope="col">Initiated By</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let transaction of transactions; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
+        <tr
+          *ngFor="
+            let transaction of transactions
+              | paginate : { itemsPerPage: 12, currentPage: currentPage };
+            let i = index
+          "
+        >
+          <th scope="row">{{ 12 * (currentPage - 1) + (i + 1) }}</th>
           <td>{{ transaction["account_number"] }}</td>
           <td>{{ transaction["date_and_time"] | date }}</td>
           <td>{{ transaction["transaction_type"] }}</td>
@@ -23,5 +29,9 @@
         </tr>
       </tbody>
     </table>
+    <pagination-controls
+      (pageChange)="currentPage = $event"
+      class="my-pagination"
+    ></pagination-controls>
   </div>
 </div>

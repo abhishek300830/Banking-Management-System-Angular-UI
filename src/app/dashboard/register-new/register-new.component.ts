@@ -26,6 +26,10 @@ export class RegisterNewComponent {
     );
   }
   onSubmit(registraitonForm: NgForm) {
+    if (registraitonForm.invalid) {
+      this.toast.showError('Please fill all the details');
+      return;
+    }
     const {
       email,
       gender,

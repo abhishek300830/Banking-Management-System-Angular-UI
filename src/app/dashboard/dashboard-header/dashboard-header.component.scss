@@ -38,11 +38,16 @@ $AquaColor:#00A9A4;
                     font-size: 25px;
                     
                 }
+                &:hover{
+                    cursor: pointer;
+                }
             }
-            .sun{
+            .active{
                 background-color: $AquaColor;
                 color: white;
             }
+
+            
 
         }
     }

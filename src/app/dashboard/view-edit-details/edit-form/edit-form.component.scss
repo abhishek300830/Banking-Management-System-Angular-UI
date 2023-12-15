@@ -34,6 +34,7 @@ $lightColor: white;
             left: 20px;
         }
     }
+    
     .submit-btn{
         border: none;
         background-color: $mainColor ;
@@ -47,6 +48,12 @@ $lightColor: white;
         }
         &:active{
             scale: .9;
+        }
+    }
+    .cancel-btn{
+        background-color: rgb(241, 116, 116);
+        &:hover{
+            background-color: rgb(249, 69, 69);
         }
     }
     

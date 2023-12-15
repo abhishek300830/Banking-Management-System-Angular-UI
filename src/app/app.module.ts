@@ -4,6 +4,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -81,6 +82,7 @@ import { AccountDetailComponent } from './dashboard/customer-view/account-detail
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [
     MessageService,
