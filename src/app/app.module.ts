@@ -41,6 +41,8 @@ import { WidgetsComponent } from './dashboard/widgets/widgets.component';
 import { MessageService } from 'primeng/api';
 import { AccountDetailComponent } from './dashboard/customer-view/account-detail/account-detail.component';
 
+import { CalendarModule } from 'primeng/calendar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +77,7 @@ import { AccountDetailComponent } from './dashboard/customer-view/account-detail
     AccountDetailComponent,
   ],
   imports: [
+    CalendarModule,
     ButtonModule,
     ToastModule,
     BrowserModule,

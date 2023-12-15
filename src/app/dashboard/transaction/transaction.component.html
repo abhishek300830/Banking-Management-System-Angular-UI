@@ -1,7 +1,17 @@
 <div class="container">
-  <div class="transaction-heading">Account Transactions</div>
+  <div class="transaction-heading">
+    <div>Account Transactions</div>
+    <div>
+      <!-- <input type="date" /> -->
+      Filter By Date:
+      <p-calendar
+        [(ngModel)]="selectedDate"
+        (ngModelChange)="handleDateChange()"
+      ></p-calendar>
+    </div>
+  </div>
   <div class="table-container">
-    <table class="table">
+    <table class="table" *ngIf="transactions">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -16,11 +26,11 @@
         <tr
           *ngFor="
             let transaction of transactions
-              | paginate : { itemsPerPage: 12, currentPage: currentPage };
+              | paginate : { itemsPerPage: 10, currentPage: currentPage };
             let i = index
           "
         >
-          <th scope="row">{{ 12 * (currentPage - 1) + (i + 1) }}</th>
+          <th scope="row">{{ 10 * (currentPage - 1) + (i + 1) }}</th>
           <td>{{ transaction["account_number"] }}</td>
           <td>{{ transaction["date_and_time"] | date }}</td>
           <td>{{ transaction["transaction_type"] }}</td>

@@ -9,19 +9,34 @@ import { Component } from '@angular/core';
 })
 export class TransactionComponent {
   currentPage: number = 1;
+  allTransactions: any[];
+  transactions: any[];
+  selectedDate: Date;
+
   constructor(
     private customerService: CustomerService,
     private toast: ToastService
   ) {}
-  transactions: [];
 
   ngOnInit(): void {
     this.getCustomerTransactions();
   }
 
+  handleDateChange() {
+    const dateToCompare = new Date(this.selectedDate).getDate();
+    this.transactions = this.allTransactions.filter((transaction: any) => {
+      const transactionDate = transaction['date_and_time'];
+      const date = new Date(transactionDate).getDate();
+      if (dateToCompare === date) {
+        return transaction;
+      }
+    });
+  }
+
   getCustomerTransactions() {
     this.customerService.getCustomerTransactions().subscribe({
       next: (data: []) => {
+        this.allTransactions = data;
         this.transactions = data;
         console.log('transactions', data);
       },
