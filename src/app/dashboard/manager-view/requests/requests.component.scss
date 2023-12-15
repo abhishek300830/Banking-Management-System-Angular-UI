@@ -16,7 +16,7 @@ $lightColor: white;
             align-items: center;
             div{
                 width: 60%;
-                margin: auto;
+                // margin: auto;
             }
             .form-select{
                 margin-top: 15px;
@@ -40,21 +40,20 @@ $lightColor: white;
          
     .request-container{
         height: 72vh;
-        
-        margin: 20px;
-        padding:30px 10px;
+        margin: 30px;
+        padding:40px 20px;
         border-radius: 20px;
         overflow-y: scroll;
-
         background-color: white;
-
         box-shadow: 0 0px 5px 0 rgba(0,0,0,0.1); 
 
         display: grid;
-        justify-content: center;
         gap: 20px;
-        grid-template-columns: auto auto auto;
-        
+        grid-template-columns: 1fr 1fr 1fr;
+        .app-request-card{
+            display: flex;
+            justify-content: center;
+        }
         // for chrome
         &::-webkit-scrollbar{
             display: none;

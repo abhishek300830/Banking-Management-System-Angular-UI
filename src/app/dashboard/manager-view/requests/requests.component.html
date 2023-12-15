@@ -29,6 +29,7 @@
       *ngIf="filteredRequests === 'registration' || filteredRequests === ''"
     >
       <app-request-card
+        class="app-request-card"
         [currentTheme]="currentTheme"
         *ngFor="let registrationRequest of registrationRequests"
         [registrationRequest]="registrationRequest"
@@ -39,6 +40,7 @@
       *ngIf="filteredRequests === 'withdraw' || filteredRequests === ''"
     >
       <app-request-card
+        class="app-request-card"
         [currentTheme]="currentTheme"
         *ngFor="let withdrawnRequest of withdrawnRequests"
         [withdrawnRequest]="withdrawnRequest"
@@ -48,6 +50,7 @@
       *ngIf="filteredRequests === 'modification' || filteredRequests === ''"
     >
       <app-request-card
+        class="app-request-card"
         [currentTheme]="currentTheme"
         *ngFor="let modificationRequest of modificationRequests"
         [modificationRequest]="modificationRequest"

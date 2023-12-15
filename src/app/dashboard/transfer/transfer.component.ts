@@ -53,6 +53,9 @@ export class TransferComponent {
             this.router.navigate(['/login']);
           } else if (error.status === 404) {
             this.toast.showError(error.error.detail.error.message);
+          } else if (error.status === 400) {
+            console.log(error);
+            this.toast.showError(error.error.detail);
           }
         },
       });
