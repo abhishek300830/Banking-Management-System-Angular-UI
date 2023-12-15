@@ -31,6 +31,7 @@ export class LoginService {
     this.user.role = decoded['role'];
     this.user.jwt_token = jwt_token;
     this.user.username = decoded.sub;
+    this.user.name = decoded['name'];
 
     return this.user;
   }
@@ -40,10 +41,12 @@ interface userDetail {
   jwt_token: string;
   username: string;
   role: string;
+  name: string;
 }
 
 export class UserModel implements userDetail {
   public jwt_token: string;
   public username: string;
   public role: string;
+  public name: string;
 }
