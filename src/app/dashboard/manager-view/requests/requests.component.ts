@@ -12,7 +12,6 @@ export class RequestsComponent {
   currentTheme: String;
   themeSubscription: Subscription;
   filteredRequests: string = '';
-  // currentPage: number = 1;
 
   modificationRequests: [];
   registrationRequests: [];
@@ -42,16 +41,9 @@ export class RequestsComponent {
         this.modificationRequests = response['modification_requests'];
         this.registrationRequests = response['new_registration_requests'];
         this.withdrawnRequests = response['withdrawn_requests'];
-
-        console.log(
-          this.modificationRequests,
-          this.registrationRequests,
-          this.withdrawnRequests
-        );
       },
       error: (error) => {
-        this.toast.showError("Couldn't fetch requests try again later");
-        console.log(error);
+        this.toast.showError(error.error.detail);
       },
     });
   }

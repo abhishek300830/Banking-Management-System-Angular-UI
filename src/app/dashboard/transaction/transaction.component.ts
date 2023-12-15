@@ -12,6 +12,7 @@ export class TransactionComponent {
   allTransactions: any[];
   transactions: any[];
   selectedDate: Date;
+  emptyTransactions: boolean = false;
 
   constructor(
     private customerService: CustomerService,
@@ -31,6 +32,7 @@ export class TransactionComponent {
         return transaction;
       }
     });
+    this.emptyTransactions = this.transactions.length === 0 ? true : false;
   }
 
   getCustomerTransactions() {
@@ -38,7 +40,9 @@ export class TransactionComponent {
       next: (data: []) => {
         this.allTransactions = data;
         this.transactions = data;
-        console.log('transactions', data);
+        if (data.length === 0) {
+          this.emptyTransactions = true;
+        }
       },
       error: (error) => {
         this.toast.showError('Error while fetching transactions.');

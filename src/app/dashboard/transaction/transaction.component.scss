@@ -26,15 +26,18 @@ $AquaColor:#00A9A4;
         border-radius: 10px;
         overflow: hidden;
         display: grid;
-        grid-template-rows: auto auto;
+        // grid-template-rows: auto auto;
         .table{
-            t{
-                background-color: red;
-            }
             > tbody > tr:nth-of-type(odd) > * {
                 background-color: $lightBlueColor;
               }
             font-size: 1.1rem;
+            > tbody > tr > td{
+                border: none;
+            }
+            > tbody > tr > th{
+                border: none;
+            }
             
         }
         .my-pagination{
@@ -52,5 +55,18 @@ $AquaColor:#00A9A4;
       }
     
 
+    }
+
+    .empty-transactions{
+        // background-color: red;
+        height: 70vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        img{
+            width: 30%;
+        }
     }
 }
