@@ -54,12 +54,17 @@ export class RegisterNewComponent {
 
     this.dashboardService.registerCustomer(UserDetailsObject).subscribe({
       next: (response) => {
-        console.log(response);
         this.toast.showSuccess(response['details']);
+        registraitonForm.reset();
       },
       error: (error) => {
-        this.toast.showError('Error in registering new user. Try Again');
-        console.log(error);
+        if (error.status === 400) {
+          this.toast.showError(error.error.detail.error.message);
+        } else if (error.status === 404) {
+          this.toast.showError(error.error['details']);
+        } else {
+          this.toast.showError('Error in registering new user. Try Again');
+        }
       },
     });
   }

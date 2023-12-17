@@ -22,29 +22,55 @@
         <div>Withdraw</div>
       </div>
     </div>
-    <div class="description" *ngIf="registrationRequest">
-      Name - {{ registrationRequest["name"] }} <br />
-      Email - {{ registrationRequest["email"] }} <br />Phone -
-      {{ registrationRequest["phone_no"] }} <br />
-      ID Type - {{ registrationRequest["id_proof_type"] }} <br />
-      ID Number - {{ registrationRequest["id_proof"] }} <br />Gender -
-      {{ registrationRequest["gender"] }}
-      <br />
-    </div>
-    <div class="description" *ngIf="modificationRequest">
-      Request ID : {{ modificationRequest["request_id"] }} <br />
-      Account Number : {{ modificationRequest["user_id"] * 1000 }} <br />
-      Detail to update : {{ modificationRequest["attribute_to_update"] }} <br />
-      Detail value : {{ modificationRequest["attribute_value"] }} <br />
+    <div class="req-card" *ngIf="registrationRequest">
+      <ul class="left">
+        <li>Name :</li>
+        <li>Email :</li>
+        <li>Phone :</li>
+        <li>ID Type :</li>
+        <li>ID Number :</li>
+        <li>Gender :</li>
+      </ul>
+      <ul class="right">
+        <li>{{ registrationRequest["name"] }}</li>
+        <li>{{ registrationRequest["email"] }}</li>
+        <li>{{ registrationRequest["phone_no"] }}</li>
+        <li>{{ registrationRequest["id_proof_type"] }}</li>
+        <li>{{ registrationRequest["id_proof"] }}</li>
+        <li>{{ registrationRequest["gender"] }}</li>
+      </ul>
     </div>
 
-    <div class="description" *ngIf="withdrawnRequest">
-      Request ID : {{ withdrawnRequest["request_id"] }} <br />
-      AccountNumber : {{ withdrawnRequest["user_id"] * 1000 }} <br />
-      Amount to Debit : {{ withdrawnRequest["debited_amount"] }} <br />
-      Request by : {{ withdrawnRequest["requested_by"] }} <br />
-      date : {{ withdrawnRequest["date"] | date }} <br />
-      <!-- user_id : 6 -->
+    <div class="req-card" *ngIf="modificationRequest">
+      <ul class="left">
+        <li>Request ID</li>
+        <li>Account Number</li>
+        <li>Detail to update</li>
+        <li>Detail value</li>
+      </ul>
+      <ul class="right">
+        <li>{{ modificationRequest["request_id"] }}</li>
+        <li>{{ modificationRequest["user_id"] * 1000 }}</li>
+        <li>{{ modificationRequest["attribute_to_update"] }}</li>
+        <li>{{ modificationRequest["attribute_value"] }}</li>
+      </ul>
+    </div>
+
+    <div class="req-card" *ngIf="withdrawnRequest">
+      <ul class="left">
+        <li>Request ID</li>
+        <li>Account No</li>
+        <li>Amount</li>
+        <li>Request by</li>
+        <li>Date</li>
+      </ul>
+      <ul class="right">
+        <li>{{ withdrawnRequest["request_id"] }}</li>
+        <li>{{ withdrawnRequest["user_id"] * 1000 }}</li>
+        <li>{{ withdrawnRequest["debited_amount"] }}</li>
+        <li>{{ withdrawnRequest["requested_by"] }}</li>
+        <li>{{ withdrawnRequest["date"] | date }}</li>
+      </ul>
     </div>
     <div class="buttons-container text-center">
       <button

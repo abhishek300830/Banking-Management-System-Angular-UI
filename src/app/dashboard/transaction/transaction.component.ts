@@ -45,7 +45,8 @@ export class TransactionComponent {
         }
       },
       error: (error) => {
-        this.toast.showError('Error while fetching transactions.');
+        this.emptyTransactions = true;
+        this.toast.showError(error.error.detail);
       },
     });
   }
