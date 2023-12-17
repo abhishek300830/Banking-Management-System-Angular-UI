@@ -31,9 +31,15 @@ export class LoginComponent {
         this.router.navigate(['/dashboard']);
       },
       error: (error) => {
-        this.toast.showError('Invalid Username or Password.');
-        console.log('response', error);
-        this.router.navigate(['/login']);
+        if (error.status === 401) {
+          this.toast.showError('Invalid Username or Password');
+          this.router.navigate(['/login']);
+          return;
+        } else {
+          this.toast.showError('Internal Server Error');
+          this.router.navigate(['/login']);
+          return;
+        }
       },
     });
   }

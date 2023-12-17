@@ -28,6 +28,7 @@ export class RequestCardComponent {
           next: (response) => {
             console.log(response);
             this.toast.showSuccess(response['details']);
+            this.dashboardService.onHandleRequest$.next(true);
           },
           error: (error) => {
             this.toast.showError('Could not handle registration request');
@@ -43,6 +44,7 @@ export class RequestCardComponent {
           next: (response) => {
             console.log(response);
             this.toast.showSuccess(response['details']);
+            this.dashboardService.onHandleRequest$.next(true);
           },
           error: (error) => {
             this.toast.showError('Could not handle modification request');
@@ -55,6 +57,7 @@ export class RequestCardComponent {
           next: (response) => {
             console.log(response);
             this.toast.showSuccess(response['details']);
+            this.dashboardService.onHandleRequest$.next(true);
           },
           error: (error) => {
             this.toast.showError('Could not handle withdrawal request');
@@ -64,6 +67,5 @@ export class RequestCardComponent {
       console.log('No request to approve');
       return;
     }
-    this.dashboardService.onHandleRequest$.next(true);
   }
 }
