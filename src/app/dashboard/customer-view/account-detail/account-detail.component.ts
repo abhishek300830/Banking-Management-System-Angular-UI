@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CustomerService } from '../service/customer.service';
 import { LoginService } from 'src/app/login/service/login.service';
 import { ToastService } from 'src/app/shared/toast.service';
@@ -15,6 +15,8 @@ export class AccountDetailComponent implements OnInit {
   accountNumber: number;
   accountBalance: number;
   balanceOnHold: number;
+
+  @Output() accountNumberEmitter = new EventEmitter<number>();
 
   isTransferedSubscription: Subscription;
 
@@ -39,6 +41,7 @@ export class AccountDetailComponent implements OnInit {
         this.accountNumber = data['account_number'];
         this.accountBalance = data['account_balance'];
         this.balanceOnHold = data['pending_balance'];
+        this.accountNumberEmitter.emit(this.accountNumber);
       },
       error: (error) => {
         this.toast.showError('Error Occured. Please try again.');

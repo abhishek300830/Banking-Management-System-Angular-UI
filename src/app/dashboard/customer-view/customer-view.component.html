@@ -3,11 +3,15 @@
     <app-view-heading
       [currentTheme]="currentTheme"
       role="Customer"
+      [accountNumber]="accountNumber"
     ></app-view-heading>
   </div>
   <div class="row">
     <div class="col">
-      <app-account-detail [currentTheme]="currentTheme"></app-account-detail>
+      <app-account-detail
+        [currentTheme]="currentTheme"
+        (accountNumberEmitter)="getAccountNumber($event)"
+      ></app-account-detail>
     </div>
 
     <div class="col">

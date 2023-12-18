@@ -10,7 +10,7 @@ export class ViewHeadingComponent {
   @Input() currentTheme: String;
   @Input() role: string = 'notCustomer';
   name: string;
-  accountNumber: string = '12000';
+  @Input() accountNumber: number = 1000;
 
   ngOnInit(): void {
     this.name = JSON.parse(sessionStorage.getItem('user'))['name'];

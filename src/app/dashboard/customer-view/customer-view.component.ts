@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class CustomerViewComponent {
   @Input() currentTheme: string;
+  accountNumber: number;
+
+  getAccountNumber(accountNumber: number) {
+    this.accountNumber = accountNumber;
+  }
 }
