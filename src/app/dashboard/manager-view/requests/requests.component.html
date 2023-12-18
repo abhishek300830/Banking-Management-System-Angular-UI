@@ -25,6 +25,7 @@
     class="request-container"
     [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
   >
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
     <ng-container
       *ngIf="filteredRequests === 'registration' || filteredRequests === ''"
     >

@@ -42,6 +42,7 @@ import { MessageService } from 'primeng/api';
 import { AccountDetailComponent } from './dashboard/customer-view/account-detail/account-detail.component';
 
 import { CalendarModule } from 'primeng/calendar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { CalendarModule } from 'primeng/calendar';
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     MessageService,

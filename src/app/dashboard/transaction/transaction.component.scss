@@ -27,7 +27,12 @@ $AquaColor:#00A9A4;
             align-items: center;
             .date-picker{
                 margin-left: 20px;
-                // width: 100%;
+                padding: 0px;
+                    // .p-calendar-panel {
+                    //   height: 200px;
+                    //   width: 250px;
+                    // }
+                  
             }
         }
         
@@ -56,10 +61,16 @@ $AquaColor:#00A9A4;
         .my-pagination{
             align-self: end;
         }
+
+        .my-pagination ::ng-deep .ngx-pagination .ng-star-inserted {
+            text-decoration: none;
+            }
     
+
 
     .my-pagination ::ng-deep .ngx-pagination .ng-star-inserted:hover {
         border-radius: 50px;
+
     }
 
     .my-pagination ::ng-deep .ngx-pagination .current {

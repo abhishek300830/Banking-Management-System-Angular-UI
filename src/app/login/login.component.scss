@@ -43,8 +43,17 @@ $lightColor: white;
                     position: absolute;
                     top: 20px;
                     left: 20px;
+                    
+                }
+                .fa-eye{
+                    left : 90%;
+                    cursor: pointer;
+                }
+                .fa-eye:hover{
+                    left : 90%;
                 }
             }
+            
 
         }
         .submit-btn{

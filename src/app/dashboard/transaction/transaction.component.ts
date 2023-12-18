@@ -12,7 +12,9 @@ export class TransactionComponent {
   allTransactions: any[];
   transactions: any[];
   selectedDate: Date;
+  tomorrow: Date = new Date();
   emptyTransactions: boolean = false;
+  isLoading = true; // Show spinner
 
   constructor(
     private customerService: CustomerService,
@@ -20,10 +22,12 @@ export class TransactionComponent {
   ) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.getCustomerTransactions();
   }
 
   handleDateChange() {
+    this.isLoading = true;
     const dateToCompare = new Date(this.selectedDate).getDate();
     this.transactions = this.allTransactions.filter((transaction: any) => {
       const transactionDate = transaction['date_and_time'];
@@ -33,6 +37,7 @@ export class TransactionComponent {
       }
     });
     this.emptyTransactions = this.transactions.length === 0 ? true : false;
+    this.isLoading = false;
   }
 
   getCustomerTransactions() {
@@ -49,5 +54,10 @@ export class TransactionComponent {
         this.toast.showError(error.error.detail);
       },
     });
+    this.isLoading = false;
+  }
+
+  getMaxDate() {
+    return new Date();
   }
 }

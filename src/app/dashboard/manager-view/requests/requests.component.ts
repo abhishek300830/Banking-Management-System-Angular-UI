@@ -12,6 +12,7 @@ export class RequestsComponent {
   currentTheme: String;
   themeSubscription: Subscription;
   filteredRequests: string = '';
+  isLoading = true;
 
   modificationRequests: [];
   registrationRequests: [];
@@ -28,9 +29,11 @@ export class RequestsComponent {
         this.currentTheme = theme;
       }
     );
+    this.isLoading = true;
     this.fetchAllRequests();
 
     this.dashboardService.onHandleRequest$.subscribe((response) => {
+      this.isLoading = true;
       this.fetchAllRequests();
     });
   }
@@ -46,6 +49,7 @@ export class RequestsComponent {
         this.toast.showError(error.error.detail);
       },
     });
+    this.isLoading = false;
   }
   ngOnDestroy() {
     this.themeSubscription.unsubscribe();

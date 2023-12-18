@@ -43,4 +43,8 @@ export class LoginComponent {
       },
     });
   }
+
+  showHidePassword() {
+    this.hide = !this.hide;
+  }
 }

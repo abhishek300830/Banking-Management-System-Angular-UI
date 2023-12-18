@@ -1,7 +1,17 @@
 <div
-  class="main-heading"
+  class="heading-container"
   [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
 >
-  Welcome Back, {{ name }}
-  <!-- Welcome to {{ title }} Dashboard -->
+  <div class="main-heading">Welcome Back, {{ name }}</div>
+  <div class="account-number" *ngIf="role === 'Customer'">
+    Account Number: {{ accountNumber }}
+  </div>
 </div>
+
+<!-- <div
+class="main-heading"
+[ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
+>
+Welcome Back, {{ name }}
+<div class="account-number">Account Number: {{ accountNumber }}</div>
+</div> -->
