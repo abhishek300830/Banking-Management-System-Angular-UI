@@ -26,6 +26,62 @@
     [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
   >
     <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <ng-container>
+      <div
+        class="no-requests"
+        *ngIf="
+          filteredRequests === '' &&
+          withdrawnRequests.length === 0 &&
+          registrationRequests.length === 0 &&
+          modificationRequests.length === 0 &&
+          !isLoading
+        "
+      >
+        <div class="no-requests-img">
+          <img src="\assets\images\no-data\no-data.svg" alt="" />
+        </div>
+        <div class="no-requests-text">No Pending Requests</div>
+      </div>
+      <div
+        class="no-requests"
+        *ngIf="
+          filteredRequests === 'withdraw' &&
+          withdrawnRequests.length === 0 &&
+          !isLoading
+        "
+      >
+        <div class="no-requests-img">
+          <img src="\assets\images\no-data\no-data.svg" alt="" />
+        </div>
+        <div class="no-requests-text">No Withdraw Requests</div>
+      </div>
+      <div
+        class="no-requests"
+        *ngIf="
+          filteredRequests === 'registration' &&
+          registrationRequests.length === 0 &&
+          !isLoading
+        "
+      >
+        <div class="no-requests-img">
+          <img src="\assets\images\no-data\no-data.svg" alt="" />
+        </div>
+        <div class="no-requests-text">No Registration Requests</div>
+      </div>
+      <div
+        class="no-requests"
+        *ngIf="
+          filteredRequests === 'modification' &&
+          modificationRequests.length === 0 &&
+          !isLoading
+        "
+      >
+        <div class="no-requests-img">
+          <img src="\assets\images\no-data\no-data.svg" alt="" />
+        </div>
+        <div class="no-requests-text">No Modification Requests</div>
+      </div>
+    </ng-container>
     <ng-container
       *ngIf="filteredRequests === 'registration' || filteredRequests === ''"
     >
