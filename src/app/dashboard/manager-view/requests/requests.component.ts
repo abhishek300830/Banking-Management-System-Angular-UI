@@ -14,9 +14,9 @@ export class RequestsComponent {
   filteredRequests: string = '';
   isLoading = true;
 
-  modificationRequests: [];
-  registrationRequests: [];
-  withdrawnRequests: [];
+  modificationRequests = [];
+  registrationRequests = [];
+  withdrawnRequests = [];
 
   constructor(
     private dashboardService: DashboardService,
