@@ -49,19 +49,8 @@ html{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;  
-    // font-family: 'Playfair Display', serif; 
 }
-// body{
 
-// }
-
-// .light_theme{
-//     background-color: $lightBlueColor;
-// }
-// .light_sidebar{
-
-
-// }
 .dark_theme{
     background-color: $DTDarkColor !important;
     color:white;
@@ -79,13 +68,7 @@ html{
 
 .invalidfield {
     border: 1px solid rgb(253, 109, 109);
-    // box-shadow: 0 0 1px 0 red;
 }
-
-
-
-
-
 
 /* Chrome, Safari, Edge, Opera */
 input[type=number]::-webkit-inner-spin-button, 
@@ -101,9 +84,8 @@ input[type=number] {
 }
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+// html, body { height: 100%; }
+// body { margin: 0; }
 
 
 .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle, .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {

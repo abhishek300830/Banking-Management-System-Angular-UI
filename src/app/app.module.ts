@@ -8,10 +8,6 @@ import { MessageService } from 'primeng/api';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginInterceptor } from './login/login.interceptor';
-// import { DashboardModule } from './dashboard/dashboard.module';
-// import { HomeModule } from './home/home.module';
-// import { PageNotFoundModule } from './page-not-found/page-not-found.module';
-// import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,8 +15,8 @@ import { LoginInterceptor } from './login/login.interceptor';
     ToastModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
   ],
 
   providers: [
