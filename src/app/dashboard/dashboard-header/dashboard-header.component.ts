@@ -7,7 +7,6 @@ import { DashboardService } from '../service/dashboard.service';
   styleUrls: ['./dashboard-header.component.scss'],
 })
 export class DashboardHeaderComponent implements OnInit {
-  // @Input() currentTheme: String;
   @Input() username: string;
   currentTheme: string;
 

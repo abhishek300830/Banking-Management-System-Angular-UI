@@ -28,11 +28,6 @@ $AquaColor:#00A9A4;
             .date-picker{
                 margin-left: 20px;
                 padding: 0px;
-                    // .p-calendar-panel {
-                    //   height: 200px;
-                    //   width: 250px;
-                    // }
-                  
             }
         }
         
@@ -44,7 +39,6 @@ $AquaColor:#00A9A4;
         border-radius: 10px;
         overflow: hidden;
         display: grid;
-        // grid-template-rows: auto auto;
         .table{
             > tbody > tr:nth-of-type(odd) > * {
                 background-color: $lightBlueColor;
@@ -82,7 +76,6 @@ $AquaColor:#00A9A4;
     }
 
     .empty-transactions{
-        // background-color: red;
         height: 70vh;
         width: 100%;
         display: flex;

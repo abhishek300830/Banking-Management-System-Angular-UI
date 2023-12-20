@@ -17,7 +17,6 @@ $lightColor: white;
             align-items: center;
             div{
                 width: 60%;
-                // margin: auto;
             }
             .form-select{
                 margin-top: 15px;
@@ -80,14 +79,12 @@ $lightColor: white;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    // width: 100%;
     .no-requests-text{
         font-family: 'Poppins', sans-serif;
         font-size: 1.2rem;
         margin-top: 20px;
         font-weight: bold;
         margin-left: -250px;
-        // color: #00A9A4;
     }
     .no-requests-img{
         img{

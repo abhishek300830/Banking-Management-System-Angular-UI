@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CustomerService } from '../service/customer.service';
-import { LoginService } from 'src/app/login/service/login.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
