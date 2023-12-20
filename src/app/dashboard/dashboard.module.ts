@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { ToastModule } from 'primeng/toast';
+
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DashboardMainViewComponent } from './dashboard-main-view/dashboard-main-view.component';
 import { RequestsComponent } from './manager-view/requests/requests.component';
 import { RegisterNewComponent } from './register-new/register-new.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { ViewEditDetailsComponent } from './view-edit-details/view-edit-details.component';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { ButtonModule } from 'primeng/button';
-import { CalendarModule } from 'primeng/calendar';
-import { ToastModule } from 'primeng/toast';
-import { AppRoutingModule } from '../app-routing.module';
 import { ViewCustomerDetailsComponent } from './view-edit-details/view-customer-details/view-customer-details.component';
 import { EditFormComponent } from './view-edit-details/edit-form/edit-form.component';
 import { ManagerViewComponent } from './manager-view/manager-view.component';
@@ -30,6 +31,7 @@ import { QuickTransferComponent } from './customer-view/quick-transfer/quick-tra
 import { DashboardComponent } from './dashboard.component';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 @NgModule({
   declarations: [
@@ -60,12 +62,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ButtonModule,
     ToastModule,
     CommonModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
     MatProgressSpinnerModule,
+    DashboardRoutingModule,
   ],
   exports: [],
   providers: [],

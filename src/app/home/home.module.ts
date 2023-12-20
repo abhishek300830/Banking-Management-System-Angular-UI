@@ -4,10 +4,10 @@ import { BodyComponent } from './body/body.component';
 import { SharedModule } from '../shared/shared.module';
 import { JoinUsComponent } from './body/join-us/join-us.component';
 import { OurFeaturesComponent } from './body/our-features/our-features.component';
-import { AppRoutingModule } from '../app-routing.module';
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
-  imports: [SharedModule, AppRoutingModule],
+  imports: [SharedModule, HomeRoutingModule],
   exports: [],
   declarations: [
     HomeComponent,
