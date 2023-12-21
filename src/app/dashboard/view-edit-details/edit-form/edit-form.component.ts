@@ -13,7 +13,7 @@ export class EditFormComponent {
   customerDetails: string;
   @Output() isEditMode = new EventEmitter();
 
-  @Input() currentTheme: String;
+  @Input() currentTheme: string;
   @Input() accountNumber: number;
 
   constructor(

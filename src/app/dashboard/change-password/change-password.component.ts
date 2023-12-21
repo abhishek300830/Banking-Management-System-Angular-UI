@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
+import { CHANGE_PASSWORD_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-change-password',
@@ -10,6 +11,7 @@ import { ToastService } from 'src/app/shared/toast.service';
   styleUrls: ['./change-password.component.scss'],
 })
 export class ChangePasswordComponent {
+  constants = CHANGE_PASSWORD_CONSTANTS;
   currentTheme: string;
   themeSubscription: Subscription;
 

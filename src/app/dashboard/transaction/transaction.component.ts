@@ -36,7 +36,7 @@ export class TransactionComponent {
         return transaction;
       }
     });
-    this.emptyTransactions = this.transactions.length === 0 ? true : false;
+    this.emptyTransactions = this.transactions.length === 0;
     this.isLoading = false;
   }
 

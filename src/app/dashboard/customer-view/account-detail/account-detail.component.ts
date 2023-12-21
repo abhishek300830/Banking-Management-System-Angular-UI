@@ -3,6 +3,7 @@ import { CustomerService } from '../service/customer.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ACCOUNT_DETAIL_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-account-detail',
@@ -10,6 +11,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./account-detail.component.scss'],
 })
 export class AccountDetailComponent implements OnInit {
+  constants = ACCOUNT_DETAIL_CONSTANTS;
   @Input() currentTheme: string;
   accountNumber: number;
   accountBalance: number;

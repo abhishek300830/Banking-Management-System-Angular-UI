@@ -5,9 +5,11 @@
         #quickTransferForm="ngForm"
         (ngSubmit)="onSubmit(quickTransferForm)"
       >
-        <div class="form-heading mb-4">Quick Transfer</div>
+        <div class="form-heading mb-4">{{ constants.FORM_HEADING }}</div>
         <div class="input-with-icon mb-3"></div>
-        <label for="account" class="form-label">Account Number</label>
+        <label for="account" class="form-label">{{
+          constants.ACCOUNT_NUMBER_LABEL
+        }}</label>
         <div class="input-with-icon mb-3">
           <input
             ngModel
@@ -28,7 +30,9 @@
           <i class="fa-solid fa-user"></i>
         </div>
 
-        <label for="amount" class="form-label">Amount</label>
+        <label for="amount" class="form-label">{{
+          constants.AMOUNT_LABEL
+        }}</label>
         <div class="input-with-icon mb-3">
           <input
             ngModel
@@ -55,7 +59,7 @@
             [disabled]="quickTransferForm.invalid"
           >
             <i class="fa-solid fa-circle-check"></i>
-            Transfer
+            {{ constants.BUTTON_TEXT }}
           </button>
         </div>
       </form>

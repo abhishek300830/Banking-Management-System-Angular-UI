@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastService } from 'src/app/shared/toast.service';
 import { CustomerService } from '../service/customer.service';
+import { QUICK_TRANSFER_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-quick-transfer',
@@ -9,6 +10,7 @@ import { CustomerService } from '../service/customer.service';
   styleUrls: ['./quick-transfer.component.scss'],
 })
 export class QuickTransferComponent {
+  constants = QUICK_TRANSFER_CONSTANTS;
   @Input() currentTheme: String;
 
   constructor(

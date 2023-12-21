@@ -10,26 +10,26 @@
   <div class="content-container">
     <div class="request-type">
       <div class="left-side">
-        <div>Request Type :</div>
+        <div>{{ constants.REQUEST_TYPE }}</div>
       </div>
       <div class="right-side" *ngIf="registrationRequest">
-        <div>Registration</div>
+        <div>{{ constants.REGISTRATION }}</div>
       </div>
       <div class="right-side" *ngIf="modificationRequest">
-        <div>Modification</div>
+        <div>{{ constants.MODIFICATION }}</div>
       </div>
       <div class="right-side" *ngIf="withdrawnRequest">
-        <div>Withdraw</div>
+        <div>{{ constants.WITHDRAW }}</div>
       </div>
     </div>
     <div class="req-card" *ngIf="registrationRequest">
       <ul class="left">
-        <li>Name :</li>
-        <li>Email :</li>
-        <li>Phone :</li>
-        <li>ID Type :</li>
-        <li>ID Number :</li>
-        <li>Gender :</li>
+        <li>{{ constants.NAME }}</li>
+        <li>{{ constants.EMAIL }}</li>
+        <li>{{ constants.PHONE }}</li>
+        <li>{{ constants.ID_TYPE }}</li>
+        <li>{{ constants.ID_NUMBER }}</li>
+        <li>{{ constants.GENDER }}</li>
       </ul>
       <ul class="right">
         <li>{{ registrationRequest["name"] }}</li>
@@ -43,10 +43,10 @@
 
     <div class="req-card" *ngIf="modificationRequest">
       <ul class="left">
-        <li>Request ID</li>
-        <li>Account Number</li>
-        <li>Detail to update</li>
-        <li>Detail value</li>
+        <li>{{ constants.REQUEST_ID }}</li>
+        <li>{{ constants.ACCOUNT_NUMBER }}</li>
+        <li>{{ constants.DETAIL_TO_UPDATE }}</li>
+        <li>{{ constants.DETAIL_VALUE }}</li>
       </ul>
       <ul class="right">
         <li>{{ modificationRequest["request_id"] }}</li>
@@ -58,11 +58,11 @@
 
     <div class="req-card" *ngIf="withdrawnRequest">
       <ul class="left">
-        <li>Request ID</li>
-        <li>Account No</li>
-        <li>Amount</li>
-        <li>Request by</li>
-        <li>Date</li>
+        <li>{{ constants.REQUEST_ID }}</li>
+        <li>{{ constants.ACCOUNT_NO }}</li>
+        <li>{{ constants.AMOUNT }}</li>
+        <li>{{ constants.REQUEST_BY }}</li>
+        <li>{{ constants.DATE }}</li>
       </ul>
       <ul class="right">
         <li>{{ withdrawnRequest["request_id"] }}</li>
@@ -77,13 +77,13 @@
         class="btn submit-btn btn-success m-1"
         (click)="handleRequest('approved')"
       >
-        Approve
+        {{ constants.APPROVE_BUTTON }}
       </button>
       <button
         class="btn submit-btn reject-btn btn-danger m-1"
         (click)="handleRequest('rejected')"
       >
-        Reject
+        {{ constants.REJECT_BUTTON }}
       </button>
     </div>
   </div>

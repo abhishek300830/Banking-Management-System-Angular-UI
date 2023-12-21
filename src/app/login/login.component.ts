@@ -8,7 +8,7 @@ import { LOGIN_CONSTANTS } from './../../assets/constants/login-constants';
 @Component({
   selector: 'app-loginpage',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
   loginConstants = LOGIN_CONSTANTS;
@@ -36,11 +36,9 @@ export class LoginComponent {
         if (error.status === 401) {
           this.toast.showError('Invalid Username or Password');
           this.router.navigate(['/login']);
-          return;
         } else {
           this.toast.showError('Internal Server Error');
           this.router.navigate(['/login']);
-          return;
         }
       },
     });

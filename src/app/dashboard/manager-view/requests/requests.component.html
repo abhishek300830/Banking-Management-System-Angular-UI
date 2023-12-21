@@ -3,7 +3,7 @@
     class="request-header"
     [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
   >
-    <div>Pending Requests</div>
+    <div>{{ constants.PENDING_REQUEST }}</div>
     <div>
       <div class="input-with-icon mb-3">
         <select
@@ -12,10 +12,10 @@
           required
           name="transfertype"
         >
-          <option value="">All Requests</option>
-          <option value="withdraw">Withdraw</option>
-          <option value="registration">Registration</option>
-          <option value="modification">Modification</option>
+          <option value="">{{ constants.ALL_REQUESTS }}</option>
+          <option value="withdraw">{{ constants.WITHDRAW }}</option>
+          <option value="registration">{{ constants.REGISTRATION }}</option>
+          <option value="modification">{{ constants.MODIFICATION }}</option>
         </select>
         <i class="fa-solid fa-money-bill-transfer"></i>
       </div>
@@ -40,7 +40,7 @@
         <div class="no-requests-img">
           <img src="\assets\images\no-data\no-data.svg" alt="" />
         </div>
-        <div class="no-requests-text">No Pending Requests</div>
+        <div class="no-requests-text">{{ constants.NO_PENDING_REQUESTS }}</div>
       </div>
       <div
         class="no-requests"
@@ -53,7 +53,7 @@
         <div class="no-requests-img">
           <img src="\assets\images\no-data\no-data.svg" alt="" />
         </div>
-        <div class="no-requests-text">No Withdraw Requests</div>
+        <div class="no-requests-text">{{ constants.NO_WITHDRAW_REQUESTS }}</div>
       </div>
       <div
         class="no-requests"
@@ -66,7 +66,9 @@
         <div class="no-requests-img">
           <img src="\assets\images\no-data\no-data.svg" alt="" />
         </div>
-        <div class="no-requests-text">No Registration Requests</div>
+        <div class="no-requests-text">
+          {{ constants.NO_REGISTRATION_REQUESTS }}
+        </div>
       </div>
       <div
         class="no-requests"
@@ -79,7 +81,9 @@
         <div class="no-requests-img">
           <img src="\assets\images\no-data\no-data.svg" alt="" />
         </div>
-        <div class="no-requests-text">No Modification Requests</div>
+        <div class="no-requests-text">
+          {{ constants.NO_MODIFICATION_REQUESTS }}
+        </div>
       </div>
     </ng-container>
     <ng-container

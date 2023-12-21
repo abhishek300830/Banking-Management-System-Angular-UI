@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   user: UserModel;
   userSubscription: Subscription;
 
-  isDashboardRoute: Boolean = false;
+  isDashboardRoute: boolean = false;
 
   constructor(
     private dashboardService: DashboardService,

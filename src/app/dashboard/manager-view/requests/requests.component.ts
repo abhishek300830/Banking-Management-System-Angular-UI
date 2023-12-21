@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
+import { REQUESTS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-requests',
@@ -9,6 +10,7 @@ import { ToastService } from 'src/app/shared/toast.service';
   styleUrls: ['./requests.component.scss'],
 })
 export class RequestsComponent {
+  constants = REQUESTS_CONSTANTS;
   currentTheme: String;
   themeSubscription: Subscription;
   filteredRequests: string = '';

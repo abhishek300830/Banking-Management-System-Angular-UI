@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DashboardService } from 'src/app/dashboard/service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
+import { REQUEST_CARD_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-request-card',
@@ -8,6 +9,7 @@ import { ToastService } from 'src/app/shared/toast.service';
   styleUrls: ['./request-card.component.scss'],
 })
 export class RequestCardComponent {
+  constants = REQUEST_CARD_CONSTANTS;
   @Input() currentTheme: String;
 
   @Input() registrationRequest: Object;

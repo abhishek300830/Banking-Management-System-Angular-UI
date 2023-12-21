@@ -14,7 +14,7 @@ export class ViewEditDetailsComponent {
   accountNumber: number;
   customerDetails: Object;
 
-  currentTheme: String;
+  currentTheme: string;
   themeSubscription: Subscription;
 
   constructor(
@@ -36,7 +36,7 @@ export class ViewEditDetailsComponent {
 
   onSearch() {
     this.isEditMode = false;
-    if (isNaN(this.accountNumber) || this.accountNumber === undefined) {
+    if (isNaN(this.accountNumber) || !this.accountNumber) {
       this.toast.showError('Please enter a valid account number');
       return;
     }
