@@ -41,7 +41,7 @@
         >
           <option value="name">Name</option>
           <option value="email">Email</option>
-          <option value="phone">Phone Number</option>
+          <option value="phone_no">Phone Number</option>
           <option value="gender">Gender</option>
         </select>
       </div>
@@ -88,7 +88,7 @@
         />
       </div>
     </div>
-    <div *ngIf="customerDetails === 'phone'">
+    <div *ngIf="customerDetails === 'phone_no'">
       <label for="phone" class="form-label">Phone</label>
       <div class="input-with-icon">
         <i class="fas fa-phone"></i>
@@ -97,7 +97,7 @@
           type="number"
           class="form-control"
           id="phone"
-          name="phone"
+          name="phone_no"
           required
           pattern="[0-9]{10}"
           [ngClass]="{

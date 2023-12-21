@@ -67,7 +67,12 @@ html{
 }
 
 .invalidfield {
+
     border: 1px solid rgb(253, 109, 109);
+    &::placeholder {
+        color: rgb(240, 133, 133) !important;
+    }
+    
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -82,10 +87,6 @@ input[type=number] {
     appearance: none;
     -moz-appearance: textfield;
 }
-
-
-// html, body { height: 100%; }
-// body { margin: 0; }
 
 
 .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle, .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {

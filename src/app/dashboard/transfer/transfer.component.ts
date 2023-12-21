@@ -20,7 +20,7 @@ export class TransferComponent {
 
   onSubmit(transferForm: NgForm) {
     if (transferForm.invalid) {
-      this.toast.showError('Please fill all the fields');
+      this.toast.showError('Please enter valid details');
       return;
     }
     const transferType = transferForm.value['transfertype'];

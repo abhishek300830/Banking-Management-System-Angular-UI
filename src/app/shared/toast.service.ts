@@ -36,7 +36,7 @@ export class ToastService {
     this.messageService.add({
       key: 'tc',
       severity: 'error',
-      summary: 'Something went Wrong',
+      summary: 'An Error Occurred',
       detail: message,
     });
   }

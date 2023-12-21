@@ -44,9 +44,9 @@ export class DashboardService {
     attribute_value: string
   ) {
     return this.http.put('http://127.0.0.1:8000/customer', {
-      account_no: accountNumber,
+      account_no: accountNumber.toString(),
       attribute_to_update: attibute_name,
-      attribute_value: attribute_value,
+      attribute_value: attribute_value.toString(),
     });
   }
 

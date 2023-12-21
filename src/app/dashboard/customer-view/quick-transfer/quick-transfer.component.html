@@ -17,6 +17,7 @@
             id="account"
             aria-describedby="accountnumberHelp"
             placeholder="Enter Account Number"
+            pattern="[0-9]+"
             required
             [ngClass]="{
               invalidfield:
@@ -36,6 +37,7 @@
             class="form-control"
             id="amount"
             placeholder="Enter Amount"
+            pattern="[0-9]+"
             required
             [ngClass]="{
               invalidfield:
