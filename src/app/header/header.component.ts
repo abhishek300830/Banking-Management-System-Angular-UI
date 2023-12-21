@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SHARED_CONSTANTS } from 'src/assets/constants/shared-constants';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  constants = SHARED_CONSTANTS;
   @Input() loginpage = false;
   @Input() transparentHeader = true;
 }
