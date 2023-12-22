@@ -1,7 +1,7 @@
 <div class="container">
   <div class="transaction-heading">
     <div>
-      Filter By Date:
+      {{ constants.FILTER_BY_DATE }}
       <p-calendar
         class="date-picker small"
         [(ngModel)]="selectedDate"
@@ -10,19 +10,19 @@
         placeholder="Select a date"
       ></p-calendar>
     </div>
-    <div>Account Transactions</div>
+    <div>{{ constants.ACCOUNT_TRANSACTIONS }}</div>
   </div>
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <div class="table-container" *ngIf="!emptyTransactions">
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Account Number</th>
-          <th scope="col">Date</th>
-          <th scope="col">Transaction Type</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Initiated By</th>
+          <th scope="col">{{ constants.HASH }}</th>
+          <th scope="col">{{ constants.ACCOUNT_NUMBER }}</th>
+          <th scope="col">{{ constants.DATE }}</th>
+          <th scope="col">{{ constants.TRANSACTION_TYPE }}</th>
+          <th scope="col">{{ constants.AMOUNT }}</th>
+          <th scope="col">{{ constants.INITIATED_BY }}</th>
         </tr>
       </thead>
       <tbody>
@@ -51,7 +51,7 @@
     <div class="empty-transactions">
       <img src="\assets\images\no-data\no-data.svg" alt="empty" />
       <div class="text-center mt-3">
-        <h3 class="text-center">No Transactions Found</h3>
+        <h3 class="text-center">{{ constants.NO_TRANSACTIONS }}</h3>
       </div>
     </div>
   </ng-container>

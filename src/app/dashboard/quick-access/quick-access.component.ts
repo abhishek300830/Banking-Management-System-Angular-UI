@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { QUICK_ACCESS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-quick-access',
@@ -6,5 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./quick-access.component.scss'],
 })
 export class QuickAccessComponent {
+  constants = QUICK_ACCESS_CONSTANTS;
   @Input() currentTheme: String;
 }

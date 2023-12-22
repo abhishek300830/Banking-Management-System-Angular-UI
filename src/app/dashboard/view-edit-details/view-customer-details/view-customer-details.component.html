@@ -5,9 +5,9 @@
   <div class="no-user-selected" *ngIf="!customerDetails">
     <img src="\assets\images\view-customer-details\people_search.svg" alt="" />
     <div class="text-center mt-3">
-      <h3 class="text-center">No User Selected</h3>
+      <h3 class="text-center">{{ constants.NO_USER_SELECTED }}</h3>
       <p class="text-center">
-        Please search a customer in the above search box.
+        {{ constants.NO_USER_SELECTED_MESSAGE }}
       </p>
     </div>
   </div>
@@ -23,12 +23,12 @@
     *ngIf="customerDetails"
   >
     <div class="left-side">
-      <div>Name :</div>
-      <div>Email :</div>
-      <div>Phone :</div>
-      <div>Gender :</div>
-      <div>ID Type :</div>
-      <div>ID Number :</div>
+      <div>{{ constants.NAME }}</div>
+      <div>{{ constants.EMAIL }}</div>
+      <div>{{ constants.PHONE }}</div>
+      <div>{{ constants.GENDER }}</div>
+      <div>{{ constants.ID_TYPE }}</div>
+      <div>{{ constants.ID_NUMBER }}</div>
     </div>
     <div class="right-side">
       <div>{{ customerDetails["Name"] }}</div>
@@ -41,7 +41,7 @@
   </div>
   <div class="text-center mt-3">
     <button class="btn btn-primary submit-btn" (click)="changeEditMode()">
-      <i class="fa-solid fa-pen-to-square"></i> Modify Details
+      <i class="fa-solid fa-pen-to-square"></i> {{ constants.MODIFY_DETAILS }}
     </button>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/shared/toast.service';
+import { EDIT_FORM_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-edit-form',
@@ -10,6 +11,7 @@ import { ToastService } from 'src/app/shared/toast.service';
   styleUrls: ['./edit-form.component.scss'],
 })
 export class EditFormComponent {
+  constants = EDIT_FORM_CONSTANTS;
   customerDetails: string;
   @Output() isEditMode = new EventEmitter();
 

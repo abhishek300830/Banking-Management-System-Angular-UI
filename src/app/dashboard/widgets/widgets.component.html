@@ -11,7 +11,7 @@
       <i class="fa-solid fa-check"></i>
     </div>
     <div class="text">
-      <div>Approve Request</div>
+      <div>{{ constants.APPROVE_REQUESTS }}</div>
     </div>
   </div>
   <div class="view-customer" *ngIf="role === 'cashier'">
@@ -19,7 +19,7 @@
       <i class="fa-solid fa-sun"></i>
     </div>
     <div class="text">
-      <div>Good Morning</div>
+      <div>{{ constants.GOOD_MORNING }}</div>
     </div>
   </div>
   <div class="view-customer" routerLink="/dashboard/register">
@@ -27,7 +27,7 @@
       <i class="fa-solid fa-user-plus"></i>
     </div>
     <div class="text">
-      <div>Register Customer</div>
+      <div>{{ constants.REGISTER_CUSTOMER }}</div>
     </div>
   </div>
   <div class="view-customer" routerLink="/dashboard/editcustomer">
@@ -35,7 +35,7 @@
       <i class="fa-solid fa-people-roof"></i>
     </div>
     <div class="text">
-      <div>Manage Customer</div>
+      <div>{{ constants.MANAGE_CUSTOMER }}</div>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { VIEW_CUSTOMER_DETAILS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-view-customer-details',
@@ -6,8 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./view-customer-details.component.scss'],
 })
 export class ViewCustomerDetailsComponent {
+  constants = VIEW_CUSTOMER_DETAILS_CONSTANTS;
   @Output() isEditMode = new EventEmitter();
-  @Input() currentTheme: String;
+  @Input() currentTheme: string;
 
   @Input() customerDetails: Object;
 

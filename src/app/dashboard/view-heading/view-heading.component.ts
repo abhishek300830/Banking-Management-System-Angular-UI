@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { VIEW_HEADING_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-view-heading',
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./view-heading.component.scss'],
 })
 export class ViewHeadingComponent {
+  constants = VIEW_HEADING_CONSTANTS;
   @Input() title: string;
   @Input() currentTheme: String;
   @Input() role: string = 'notCustomer';

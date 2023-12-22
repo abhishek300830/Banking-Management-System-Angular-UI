@@ -15,7 +15,9 @@
           alt="register"
           draggable="false"
         />
-        <div class="carousel-item-heading">Register Customer</div>
+        <div class="carousel-item-heading">
+          {{ constants.REGISTER_CUSTOMER }}
+        </div>
         <div class="carousel-caption d-none d-md-block"></div>
       </div>
 
@@ -29,7 +31,9 @@
           alt="view and manage customer"
           draggable="false"
         />
-        <div class="carousel-item-heading">View Customer Details</div>
+        <div class="carousel-item-heading">
+          {{ constants.VIEW_CUSTOMER_DETAILS }}
+        </div>
       </div>
 
       <div
@@ -42,7 +46,9 @@
           alt="change theme"
           draggable="false"
         />
-        <div class="carousel-item-heading">Approve Requests</div>
+        <div class="carousel-item-heading">
+          {{ constants.VIEW_CUSTOMER_DETAILS }}
+        </div>
       </div>
     </div>
     <button
@@ -52,7 +58,7 @@
       data-bs-slide="prev"
     >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+      <span class="visually-hidden">{{ constants.PREVIOUS }}</span>
     </button>
     <button
       class="carousel-control-next"
@@ -61,7 +67,7 @@
       data-bs-slide="next"
     >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
+      <span class="visually-hidden">{{ constants.NEXT }}</span>
     </button>
   </div>
 </div>

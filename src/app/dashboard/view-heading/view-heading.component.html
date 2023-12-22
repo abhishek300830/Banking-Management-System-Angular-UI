@@ -2,8 +2,8 @@
   class="heading-container"
   [ngClass]="{ dark_light_theme: currentTheme == 'Dark' }"
 >
-  <div class="main-heading">Welcome Back, {{ name }}</div>
+  <div class="main-heading">{{ constants.WELCOME_BACK }} {{ name }}</div>
   <div class="account-number" *ngIf="role === 'Customer'">
-    Account Number: {{ accountNumber }}
+    {{ constants.ACCOUNT_NUMBER }} {{ accountNumber }}
   </div>
 </div>

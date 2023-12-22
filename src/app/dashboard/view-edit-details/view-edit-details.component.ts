@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { DashboardService } from '../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Router } from '@angular/router';
+import { VIEW_EDIT_DETAILS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-view-edit-details',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./view-edit-details.component.scss'],
 })
 export class ViewEditDetailsComponent {
+  constants = VIEW_EDIT_DETAILS_CONSTANTS;
   isEditMode: boolean = false;
   accountNumber: number;
   customerDetails: Object;

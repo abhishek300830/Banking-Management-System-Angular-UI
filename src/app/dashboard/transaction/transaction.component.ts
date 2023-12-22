@@ -1,6 +1,7 @@
 import { ToastService } from 'src/app/shared/toast.service';
 import { CustomerService } from './../customer-view/service/customer.service';
 import { Component } from '@angular/core';
+import { TRANSACTION_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-transaction',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./transaction.component.scss'],
 })
 export class TransactionComponent {
+  constants = TRANSACTION_CONSTANTS;
   currentPage: number = 1;
   allTransactions: any[];
   transactions: any[];

@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center align-items-center">
     <div class="transfer-form col-lg-10 col-sm-10 p-lg-4">
       <form #transferform="ngForm" (ngSubmit)="onSubmit(transferform)">
-        <div class="form-heading mb-4">Transfer</div>
+        <div class="form-heading mb-4">{{ constants.TRANSFER }}</div>
         <div class="input-with-icon mb-3">
           <select
             ngModel
@@ -16,14 +16,16 @@
             }"
           >
             <option value="" disabled selected hidden>
-              Choose Transfer Type
+              {{ constants.CHOOSE_TRANSFER_TYPE }}
             </option>
-            <option value="withdraw">Withdraw</option>
-            <option value="deposit">Deposit</option>
+            <option value="withdraw">{{ constants.WITHDRAW }}</option>
+            <option value="deposit">{{ constants.DEPOSIT }}</option>
           </select>
           <i class="fa-solid fa-money-bill-transfer"></i>
         </div>
-        <label for="account-number" class="form-label">Account Number</label>
+        <label for="account-number" class="form-label">{{
+          constants.ACCOUNT_NUMBER
+        }}</label>
         <div class="input-with-icon mb-3">
           <input
             ngModel
@@ -44,7 +46,7 @@
           <i class="fa-solid fa-user"></i>
         </div>
 
-        <label for="amount" class="form-label">Amount</label>
+        <label for="amount" class="form-label">{{ constants.AMOUNT }}</label>
         <div class="input-with-icon mb-3">
           <input
             ngModel
@@ -67,7 +69,7 @@
         <div class="text-center">
           <button class="btn submit-btn" type="submit">
             <i class="fa-solid fa-circle-check"></i>
-            Transfer
+            {{ constants.TRANSFER_BUTTON }}
           </button>
         </div>
       </form>

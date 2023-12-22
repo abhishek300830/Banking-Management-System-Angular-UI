@@ -1,9 +1,10 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
 import { LoginService, UserModel } from 'src/app/login/service/login.service';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/shared/toast.service';
+import { SIDEBAR_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,6 +12,7 @@ import { ToastService } from 'src/app/shared/toast.service';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
+  constants = SIDEBAR_CONSTANTS;
   currentTheme: String;
 
   userSubscription: Subscription;

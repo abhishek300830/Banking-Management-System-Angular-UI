@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { DashboardService } from '../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Router } from '@angular/router';
+import { TRANSFER_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-transfer',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./transfer.component.scss'],
 })
 export class TransferComponent {
+  constants = TRANSFER_CONSTANTS;
   @Input() currentTheme: String;
 
   constructor(

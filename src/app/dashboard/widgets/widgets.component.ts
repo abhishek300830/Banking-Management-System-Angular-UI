@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WIDGETS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
 
 @Component({
   selector: 'app-widgets',
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./widgets.component.scss'],
 })
 export class WidgetsComponent {
+  constants = WIDGETS_CONSTANTS;
   @Input() role: string;
   @Input() currentTheme: string;
 }
