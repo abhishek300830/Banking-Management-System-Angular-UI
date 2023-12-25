@@ -1,5 +1,5 @@
 import { NgForm } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
@@ -10,7 +10,7 @@ import { CHANGE_PASSWORD_CONSTANTS } from 'src/app/shared/constants/dashboard-co
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.scss'],
 })
-export class ChangePasswordComponent {
+export class ChangePasswordComponent implements OnInit {
   constants = CHANGE_PASSWORD_CONSTANTS;
   currentTheme: string;
   themeSubscription: Subscription;
