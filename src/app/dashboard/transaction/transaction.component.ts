@@ -1,6 +1,6 @@
 import { ToastService } from 'src/app/shared/toast.service';
 import { CustomerService } from './../customer-view/service/customer.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TRANSACTION_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
@@ -8,15 +8,15 @@ import { TRANSACTION_CONSTANTS } from 'src/app/shared/constants/dashboard-consta
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.scss'],
 })
-export class TransactionComponent {
+export class TransactionComponent implements OnInit {
   constants = TRANSACTION_CONSTANTS;
   currentPage: number = 1;
-  allTransactions: any[];
-  transactions: any[];
+  allTransactions: string[];
+  transactions: string[];
   selectedDate: Date;
   tomorrow: Date = new Date();
   emptyTransactions: boolean = false;
-  isLoading = true; // Show spinner
+  isLoading: boolean = true;
 
   constructor(
     private customerService: CustomerService,
@@ -28,7 +28,7 @@ export class TransactionComponent {
     this.getCustomerTransactions();
   }
 
-  handleDateChange() {
+  handleDateChange(): void {
     this.isLoading = true;
     const dateToCompare = new Date(this.selectedDate).getDate();
     this.transactions = this.allTransactions.filter((transaction: any) => {
@@ -42,9 +42,9 @@ export class TransactionComponent {
     this.isLoading = false;
   }
 
-  getCustomerTransactions() {
+  getCustomerTransactions(): void {
     this.customerService.getCustomerTransactions().subscribe({
-      next: (data: []) => {
+      next: (data: string[]) => {
         this.allTransactions = data;
         this.transactions = data;
         if (data.length === 0) {
@@ -59,7 +59,7 @@ export class TransactionComponent {
     this.isLoading = false;
   }
 
-  getMaxDate() {
+  getMaxDate(): Date {
     return new Date();
   }
 }

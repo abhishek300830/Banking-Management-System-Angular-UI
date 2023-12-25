@@ -11,14 +11,14 @@ import { QUICK_TRANSFER_CONSTANTS } from 'src/app/shared/constants/dashboard-con
 })
 export class QuickTransferComponent {
   constants = QUICK_TRANSFER_CONSTANTS;
-  @Input() currentTheme: String;
+  @Input() currentTheme: string;
 
   constructor(
     private customerService: CustomerService,
     private toast: ToastService
   ) {}
 
-  onSubmit(quickTransferForm: NgForm) {
+  onSubmit(quickTransferForm: NgForm): void {
     const account = quickTransferForm.value.account;
     const amount = quickTransferForm.value.amount;
 

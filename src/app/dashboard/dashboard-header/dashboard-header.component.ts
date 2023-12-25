@@ -11,13 +11,13 @@ export class DashboardHeaderComponent implements OnInit {
   currentTheme: string;
 
   constructor(private dashboardService: DashboardService) {}
-  ngOnInit() {
+  ngOnInit(): void {
     this.dashboardService.currentTheme$.subscribe((theme) => {
       this.currentTheme = theme;
     });
   }
 
-  changeTheme() {
+  changeTheme(): void {
     if (this.currentTheme === 'Dark') {
       this.dashboardService.currentTheme$.next('Light');
     } else {

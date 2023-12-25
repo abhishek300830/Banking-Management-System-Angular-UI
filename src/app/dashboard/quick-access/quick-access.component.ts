@@ -8,5 +8,5 @@ import { QUICK_ACCESS_CONSTANTS } from 'src/app/shared/constants/dashboard-const
 })
 export class QuickAccessComponent {
   constants = QUICK_ACCESS_CONSTANTS;
-  @Input() currentTheme: String;
+  @Input() currentTheme: string;
 }

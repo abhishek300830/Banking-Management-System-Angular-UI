@@ -1,5 +1,5 @@
 import { NgForm } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
@@ -10,7 +10,7 @@ import { CHANGE_PASSWORD_CONSTANTS } from 'src/app/shared/constants/dashboard-co
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.scss'],
 })
-export class ChangePasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit, OnDestroy {
   constants = CHANGE_PASSWORD_CONSTANTS;
   currentTheme: string;
   themeSubscription: Subscription;
@@ -20,7 +20,7 @@ export class ChangePasswordComponent implements OnInit {
     private toast: ToastService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
       (theme) => {
         this.currentTheme = theme;
@@ -28,7 +28,7 @@ export class ChangePasswordComponent implements OnInit {
     );
   }
 
-  onSubmit(changePasswordForm: NgForm) {
+  onSubmit(changePasswordForm: NgForm): void {
     const oldpassword = changePasswordForm.value.oldpassword;
     const newpassword = changePasswordForm.value.newpassword;
     this.dashboardService.changePassword(oldpassword, newpassword).subscribe({
@@ -51,7 +51,7 @@ export class ChangePasswordComponent implements OnInit {
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
   }
 }

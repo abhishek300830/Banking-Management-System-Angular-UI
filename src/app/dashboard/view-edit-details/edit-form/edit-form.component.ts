@@ -24,16 +24,13 @@ export class EditFormComponent {
     private toast: ToastService
   ) {}
 
-  ngOnInit() {}
-  changeEditMode() {
+  changeEditMode(): void {
     this.isEditMode.emit(false);
   }
 
-  onSubmit(customerEditForm: NgForm) {
+  onSubmit(customerEditForm: NgForm): void {
     const attribute_name = customerEditForm.value['customer-detail'];
     const attribute_value = customerEditForm.value[attribute_name];
-
-    console.log(this.accountNumber, attribute_name, attribute_value);
 
     this.dashboardService
       .modifyCustomerDetails(
@@ -51,7 +48,6 @@ export class EditFormComponent {
             this.router.navigate(['/login']);
           } else {
             this.toast.showError("Error in updating customer's details");
-            console.log(error);
           }
         },
       });

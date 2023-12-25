@@ -20,9 +20,9 @@ export class LoginComponent {
     private toast: ToastService
   ) {}
 
-  onSubmit(form: NgForm) {
-    const username = form.value.username;
-    const password = form.value.password;
+  onSubmit(form: NgForm): void {
+    const username: string = form.value.username;
+    const password: string = form.value.password;
 
     this.loginService.login(username, password).subscribe({
       next: (response) => {
@@ -44,7 +44,7 @@ export class LoginComponent {
     });
   }
 
-  showHidePassword() {
+  showHidePassword(): void {
     this.hide = !this.hide;
   }
 }

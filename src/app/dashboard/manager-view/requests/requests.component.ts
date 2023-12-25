@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
@@ -9,23 +9,23 @@ import { REQUESTS_CONSTANTS } from 'src/app/shared/constants/dashboard-constants
   templateUrl: './requests.component.html',
   styleUrls: ['./requests.component.scss'],
 })
-export class RequestsComponent {
+export class RequestsComponent implements OnInit, OnDestroy {
   constants = REQUESTS_CONSTANTS;
-  currentTheme: String;
+  currentTheme: string;
   themeSubscription: Subscription;
   filteredRequests: string = '';
-  isLoading = true;
+  isLoading: boolean = true;
 
-  modificationRequests = [];
-  registrationRequests = [];
-  withdrawnRequests = [];
+  modificationRequests: [] = [];
+  registrationRequests: [] = [];
+  withdrawnRequests: [] = [];
 
   constructor(
     private dashboardService: DashboardService,
     private toast: ToastService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
       (theme) => {
         this.currentTheme = theme;
@@ -40,7 +40,7 @@ export class RequestsComponent {
     });
   }
 
-  fetchAllRequests() {
+  fetchAllRequests(): void {
     this.dashboardService.getAllRequests().subscribe({
       next: (response) => {
         this.modificationRequests = response['modification_requests'];
@@ -53,7 +53,7 @@ export class RequestsComponent {
     });
     this.isLoading = false;
   }
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
   }
 }

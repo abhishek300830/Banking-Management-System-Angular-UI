@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { CustomerService } from '../service/customer.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Router } from '@angular/router';
@@ -10,7 +17,7 @@ import { ACCOUNT_DETAIL_CONSTANTS } from 'src/app/shared/constants/dashboard-con
   templateUrl: './account-detail.component.html',
   styleUrls: ['./account-detail.component.scss'],
 })
-export class AccountDetailComponent implements OnInit {
+export class AccountDetailComponent implements OnInit, OnDestroy {
   constants = ACCOUNT_DETAIL_CONSTANTS;
   @Input() currentTheme: string;
   accountNumber: number;
@@ -36,7 +43,7 @@ export class AccountDetailComponent implements OnInit {
         }
       });
   }
-  showCustomerBalance() {
+  showCustomerBalance(): void {
     this.customerService.getCustomerBalance().subscribe({
       next: (data) => {
         this.accountNumber = data['account_number'];
@@ -50,5 +57,9 @@ export class AccountDetailComponent implements OnInit {
         this.router.navigate(['/login']);
       },
     });
+  }
+
+  ngOnDestroy(): void {
+    this.isTransferedSubscription.unsubscribe();
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
@@ -10,9 +10,9 @@ import { REGISTER_NEW_CONSTANTS } from 'src/app/shared/constants/dashboard-const
   templateUrl: './register-new.component.html',
   styleUrls: ['./register-new.component.scss'],
 })
-export class RegisterNewComponent {
+export class RegisterNewComponent implements OnInit, OnDestroy {
   constants = REGISTER_NEW_CONSTANTS;
-  currentTheme: String;
+  currentTheme: string;
   themeSubscription: Subscription;
 
   constructor(
@@ -20,14 +20,14 @@ export class RegisterNewComponent {
     private toast: ToastService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
       (theme) => {
         this.currentTheme = theme;
       }
     );
   }
-  onSubmit(registraitonForm: NgForm) {
+  onSubmit(registraitonForm: NgForm): void {
     if (registraitonForm.invalid) {
       this.toast.showError('Please fill all the details');
       return;
@@ -71,7 +71,7 @@ export class RegisterNewComponent {
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();
   }
 }

@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginService, UserModel } from 'src/app/login/service/login.service';
 import { DashboardService } from '../service/dashboard.service';
 
@@ -8,7 +8,7 @@ import { DashboardService } from '../service/dashboard.service';
   templateUrl: './dashboard-main-view.component.html',
   styleUrls: ['./dashboard-main-view.component.scss'],
 })
-export class DashboardMainViewComponent implements OnInit {
+export class DashboardMainViewComponent implements OnInit, OnDestroy {
   user: UserModel;
   userSubscription: Subscription;
 
@@ -29,5 +29,10 @@ export class DashboardMainViewComponent implements OnInit {
         this.currentTheme = theme;
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
+    this.themeSubscription.unsubscribe();
   }
 }

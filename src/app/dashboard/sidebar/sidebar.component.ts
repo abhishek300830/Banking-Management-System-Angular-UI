@@ -13,7 +13,7 @@ import { SIDEBAR_CONSTANTS } from 'src/app/shared/constants/dashboard-constants'
 })
 export class SidebarComponent implements OnInit {
   constants = SIDEBAR_CONSTANTS;
-  currentTheme: String;
+  currentTheme: string;
 
   userSubscription: Subscription;
   user: UserModel;
@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
     private toast: ToastService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.userSubscription = this.loginService.currentUser$.subscribe((user) => {
       this.user = user;
     });
@@ -47,7 +47,7 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  getClass() {
+  getClass(): string {
     if (this.currentTheme === 'Light') {
       return 'active_light';
     } else {
@@ -55,7 +55,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  onLogout() {
+  onLogout(): void {
     this.loginService.currentUser$.next(null);
     sessionStorage.clear();
     this.router.navigate(['/login']);

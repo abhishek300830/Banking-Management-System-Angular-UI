@@ -9,7 +9,7 @@ export class CustomerViewComponent {
   @Input() currentTheme: string;
   accountNumber: number;
 
-  getAccountNumber(accountNumber: number) {
+  getAccountNumber(accountNumber: number): void {
     this.accountNumber = accountNumber;
   }
 }

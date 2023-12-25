@@ -13,7 +13,7 @@ export class ViewCustomerDetailsComponent {
 
   @Input() customerDetails: Object;
 
-  changeEditMode() {
+  changeEditMode(): void {
     this.isEditMode.emit(true);
   }
 }

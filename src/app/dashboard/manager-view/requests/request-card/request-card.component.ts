@@ -10,7 +10,7 @@ import { REQUEST_CARD_CONSTANTS } from 'src/app/shared/constants/dashboard-const
 })
 export class RequestCardComponent {
   constants = REQUEST_CARD_CONSTANTS;
-  @Input() currentTheme: String;
+  @Input() currentTheme: string;
 
   @Input() registrationRequest: Object;
   @Input() modificationRequest: Object;
@@ -21,14 +21,13 @@ export class RequestCardComponent {
     private toast: ToastService
   ) {}
 
-  handleRequest(status: string) {
+  handleRequest(status: string): void {
     if (this.registrationRequest) {
       console.log(this.registrationRequest);
       this.dashboardService
         .approveRegistrationRequest(this.registrationRequest['user_id'], status)
         .subscribe({
           next: (response) => {
-            console.log(response);
             this.toast.showSuccess(response['details']);
             this.dashboardService.onHandleRequest$.next(true);
           },
@@ -44,7 +43,6 @@ export class RequestCardComponent {
         )
         .subscribe({
           next: (response) => {
-            console.log(response);
             this.toast.showSuccess(response['details']);
             this.dashboardService.onHandleRequest$.next(true);
           },
@@ -57,7 +55,6 @@ export class RequestCardComponent {
         .approveWithdrawRequest(this.withdrawnRequest['request_id'], status)
         .subscribe({
           next: (response) => {
-            console.log(response);
             this.toast.showSuccess(response['details']);
             this.dashboardService.onHandleRequest$.next(true);
           },
@@ -65,9 +62,6 @@ export class RequestCardComponent {
             this.toast.showError('Could not handle withdrawal request');
           },
         });
-    } else {
-      console.log('No request to approve');
-      return;
     }
   }
 }

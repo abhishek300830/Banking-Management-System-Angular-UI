@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     private loginService: LoginService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.themeSubscription = this.dashboardService.currentTheme$.subscribe(
       (theme) => {
         this.currentTheme = theme;

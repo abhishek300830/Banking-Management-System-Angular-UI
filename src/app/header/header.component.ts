@@ -8,6 +8,6 @@ import { SHARED_CONSTANTS } from 'src/app/shared/constants/shared-constants';
 })
 export class HeaderComponent {
   constants = SHARED_CONSTANTS;
-  @Input() loginpage = false;
-  @Input() transparentHeader = true;
+  @Input() loginpage: boolean = false;
+  @Input() transparentHeader: boolean = true;
 }
