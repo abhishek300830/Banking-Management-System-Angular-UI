@@ -3,6 +3,29 @@ import { DashboardService } from 'src/app/dashboard/service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { REQUEST_CARD_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
+interface RegistrationRequest {
+  name: string;
+  email: string;
+  phone_no: string;
+  id_proof_type: string;
+  id_proof: string;
+  gender: string;
+}
+interface ModificationRequest {
+  request_id: number;
+  user_id: number;
+  attribute_to_update: string;
+  attribute_value: string;
+}
+
+interface WithdrawnRequest {
+  request_id: number;
+  user_id: number;
+  debited_amount: string;
+  requested_by: string;
+  date: string;
+}
+
 @Component({
   selector: 'app-request-card',
   templateUrl: './request-card.component.html',
@@ -12,9 +35,9 @@ export class RequestCardComponent {
   constants = REQUEST_CARD_CONSTANTS;
   @Input() currentTheme: string;
 
-  @Input() registrationRequest: Object;
-  @Input() modificationRequest: Object;
-  @Input() withdrawnRequest: Object;
+  @Input() registrationRequest: RegistrationRequest;
+  @Input() modificationRequest: ModificationRequest;
+  @Input() withdrawnRequest: WithdrawnRequest;
 
   constructor(
     private dashboardService: DashboardService,
