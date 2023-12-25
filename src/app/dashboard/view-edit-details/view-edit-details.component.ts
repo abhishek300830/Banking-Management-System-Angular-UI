@@ -14,7 +14,7 @@ export class ViewEditDetailsComponent implements OnInit, OnDestroy {
   constants = VIEW_EDIT_DETAILS_CONSTANTS;
   isEditMode: boolean = false;
   accountNumber: number;
-  customerDetails: Object;
+  customerDetails: {};
 
   currentTheme: string;
   themeSubscription: Subscription;

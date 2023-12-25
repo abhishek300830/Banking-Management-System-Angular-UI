@@ -11,7 +11,7 @@ export class ViewCustomerDetailsComponent {
   @Output() isEditMode = new EventEmitter();
   @Input() currentTheme: string;
 
-  @Input() customerDetails: Object;
+  @Input() customerDetails: {};
 
   changeEditMode(): void {
     this.isEditMode.emit(true);
