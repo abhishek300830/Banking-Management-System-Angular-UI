@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PAGE_NOT_FOUND_CONSTANTS } from 'src/assets/constants/page-not-found-constants';
+import { PAGE_NOT_FOUND_CONSTANTS } from 'src/app/shared/constants/page-not-found-constants';
 
 @Component({
   selector: 'app-page-not-found',

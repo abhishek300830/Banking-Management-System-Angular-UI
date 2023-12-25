@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { VIEW_HEADING_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { VIEW_HEADING_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-view-heading',

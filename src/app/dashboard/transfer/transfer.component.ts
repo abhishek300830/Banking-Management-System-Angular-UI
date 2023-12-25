@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { DashboardService } from '../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Router } from '@angular/router';
-import { TRANSFER_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { TRANSFER_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-transfer',

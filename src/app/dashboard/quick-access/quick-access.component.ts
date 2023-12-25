@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { QUICK_ACCESS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { QUICK_ACCESS_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-quick-access',

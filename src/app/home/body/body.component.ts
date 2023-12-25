@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BODY_CONSTANTS } from 'src/assets/constants/home-constants';
+import { BODY_CONSTANTS } from 'src/app/shared/constants/home-constants';
 
 @Component({
   selector: 'app-body',

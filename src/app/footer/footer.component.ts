@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SHARED_CONSTANTS } from 'src/assets/constants/shared-constants';
+import { SHARED_CONSTANTS } from 'src/app/shared/constants/shared-constants';
 
 @Component({
   selector: 'app-footer',

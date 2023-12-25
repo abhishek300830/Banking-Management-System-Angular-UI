@@ -1,7 +1,7 @@
 import { ToastService } from 'src/app/shared/toast.service';
 import { CustomerService } from './../customer-view/service/customer.service';
 import { Component } from '@angular/core';
-import { TRANSACTION_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { TRANSACTION_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-transaction',

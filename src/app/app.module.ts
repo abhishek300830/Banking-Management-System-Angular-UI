@@ -7,7 +7,8 @@ import { MessageService } from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginInterceptor } from './login/login.interceptor';
+import { LoginInterceptor } from './login/interceptor/login.interceptor';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [AppComponent],

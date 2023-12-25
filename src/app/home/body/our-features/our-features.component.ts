@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OUR_FEATURES_CONSTANTS } from 'src/assets/constants/home-constants';
+import { OUR_FEATURES_CONSTANTS } from 'src/app/shared/constants/home-constants';
 
 @Component({
   selector: 'app-our-features',

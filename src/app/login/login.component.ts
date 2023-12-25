@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastService } from '../shared/toast.service';
-import { LOGIN_CONSTANTS } from './../../assets/constants/login-constants';
+import { LOGIN_CONSTANTS } from '../shared/constants/login-constants';
 
 @Component({
   selector: 'app-loginpage',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   loginConstants = LOGIN_CONSTANTS;

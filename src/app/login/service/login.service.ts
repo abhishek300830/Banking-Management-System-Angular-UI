@@ -7,6 +7,7 @@ import { jwtDecode } from 'jwt-decode';
   providedIn: 'root',
 })
 export class LoginService {
+  baseUrl = 'http://127.0.0.1:8000';
   currentUser$ = new BehaviorSubject(null);
 
   user = new UserModel();
@@ -19,7 +20,7 @@ export class LoginService {
   }
 
   login(username: string, password: string) {
-    return this.http.post('http://127.0.0.1:8000/login', {
+    return this.http.post(`${this.baseUrl}/login`, {
       username,
       password,
     });

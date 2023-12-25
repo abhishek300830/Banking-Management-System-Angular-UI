@@ -4,22 +4,24 @@ import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CustomerService {
+  baseUrl = 'http://127.0.0.1:8000';
+
   constructor(private http: HttpClient) {}
 
   isAmountTransfered$ = new Subject<boolean>();
 
   getCustomerBalance() {
-    return this.http.get(`http://127.0.0.1:8000/account/balance`);
+    return this.http.get(`${this.baseUrl}/account/balance`);
   }
 
   transferFunds(amount: number, account: number) {
-    return this.http.put('http://127.0.0.1:8000/account/transfer_amount', {
+    return this.http.put(`${this.baseUrl}/account/transfer_amount`, {
       amount_to_transfer: amount,
       account_to_transfer: account,
     });
   }
 
   getCustomerTransactions() {
-    return this.http.get(`http://127.0.0.1:8000/account/passbook`);
+    return this.http.get(`${this.baseUrl}/account/passbook`);
   }
 }

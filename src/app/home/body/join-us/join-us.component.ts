@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HOME_CONSTANTS } from 'src/assets/constants/home-constants';
+import { HOME_CONSTANTS } from 'src/app/shared/constants/home-constants';
 
 @Component({
   selector: 'app-join-us',

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastService } from 'src/app/shared/toast.service';
 import { CustomerService } from '../service/customer.service';
-import { QUICK_TRANSFER_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { QUICK_TRANSFER_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-quick-transfer',

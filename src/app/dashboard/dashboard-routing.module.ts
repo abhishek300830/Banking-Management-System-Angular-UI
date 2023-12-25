@@ -7,7 +7,7 @@ import { ViewEditDetailsComponent } from './view-edit-details/view-edit-details.
 import { TransactionComponent } from './transaction/transaction.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DashboardComponent } from './dashboard.component';
-import { LoginGuard } from '../login/login.guard';
+import { LoginGuard } from '../login/guard/login.guard';
 
 const routes: Routes = [
   {

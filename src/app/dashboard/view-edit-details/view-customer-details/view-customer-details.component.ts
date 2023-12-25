@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { VIEW_CUSTOMER_DETAILS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { VIEW_CUSTOMER_DETAILS_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-view-customer-details',

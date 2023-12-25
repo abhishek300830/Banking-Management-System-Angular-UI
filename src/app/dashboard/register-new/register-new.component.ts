@@ -3,7 +3,7 @@ import { DashboardService } from '../service/dashboard.service';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { ToastService } from 'src/app/shared/toast.service';
-import { REGISTER_NEW_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { REGISTER_NEW_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-register-new',

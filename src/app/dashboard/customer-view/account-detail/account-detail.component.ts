@@ -3,7 +3,7 @@ import { CustomerService } from '../service/customer.service';
 import { ToastService } from 'src/app/shared/toast.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ACCOUNT_DETAIL_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { ACCOUNT_DETAIL_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-account-detail',

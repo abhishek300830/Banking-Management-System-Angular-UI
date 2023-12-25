@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DashboardService } from '../../service/dashboard.service';
 import { ToastService } from 'src/app/shared/toast.service';
-import { REQUESTS_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { REQUESTS_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-requests',

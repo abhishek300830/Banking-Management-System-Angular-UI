@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { LoginService } from './service/login.service';
+import { LoginService } from '../service/login.service';
 import { Observable, map, take } from 'rxjs';
 
 export const LoginGuard: CanActivateFn = (

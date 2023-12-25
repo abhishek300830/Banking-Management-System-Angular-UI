@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { LoginService, UserModel } from 'src/app/login/service/login.service';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/shared/toast.service';
-import { SIDEBAR_CONSTANTS } from 'src/assets/constants/dashboard-constants';
+import { SIDEBAR_CONSTANTS } from 'src/app/shared/constants/dashboard-constants';
 
 @Component({
   selector: 'app-sidebar',
