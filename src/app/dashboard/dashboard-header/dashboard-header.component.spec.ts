@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardHeaderComponent } from './dashboard-header.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('DashboardHeaderComponent', () => {
   let component: DashboardHeaderComponent;
@@ -8,9 +9,9 @@ describe('DashboardHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardHeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [DashboardHeaderComponent],
+      imports: [HttpClientTestingModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardHeaderComponent);
     component = fixture.componentInstance;

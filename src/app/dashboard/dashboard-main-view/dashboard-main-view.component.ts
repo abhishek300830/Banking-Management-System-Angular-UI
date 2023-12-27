@@ -14,6 +14,7 @@ export class DashboardMainViewComponent implements OnInit, OnDestroy {
 
   currentTheme: string;
   themeSubscription: Subscription;
+  component: { role: string };
 
   constructor(
     private loginService: LoginService,

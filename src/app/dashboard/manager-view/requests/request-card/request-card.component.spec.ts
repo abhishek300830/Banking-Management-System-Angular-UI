@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RequestCardComponent } from './request-card.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MessageService } from 'primeng/api';
 
 describe('RequestCardComponent', () => {
   let component: RequestCardComponent;
@@ -8,9 +10,10 @@ describe('RequestCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RequestCardComponent ]
-    })
-    .compileComponents();
+      declarations: [RequestCardComponent],
+      imports: [HttpClientTestingModule],
+      providers: [MessageService],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RequestCardComponent);
     component = fixture.componentInstance;
