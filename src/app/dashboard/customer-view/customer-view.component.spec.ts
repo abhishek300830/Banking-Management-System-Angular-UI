@@ -51,4 +51,10 @@ describe('CustomerViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set the account number', () => {
+    const accountNumber = 12345;
+    component.getAccountNumber(accountNumber);
+    expect(component.accountNumber).toEqual(accountNumber);
+  });
 });

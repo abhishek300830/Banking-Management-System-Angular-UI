@@ -43,6 +43,7 @@ export class AccountDetailComponent implements OnInit, OnDestroy {
         }
       });
   }
+
   showCustomerBalance(): void {
     this.customerService.getCustomerBalance().subscribe({
       next: (data) => {
@@ -53,13 +54,14 @@ export class AccountDetailComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         this.toast.showError('Error Occured. Please try again.');
-        console.log('response', error);
         this.router.navigate(['/login']);
       },
     });
   }
 
   ngOnDestroy(): void {
-    this.isTransferedSubscription.unsubscribe();
+    if (this.isTransferedSubscription) {
+      this.isTransferedSubscription.unsubscribe();
+    }
   }
 }

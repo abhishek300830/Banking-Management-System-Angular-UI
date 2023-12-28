@@ -42,8 +42,6 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
           this.toast.showError(
             'Include Uppercase, Lowercase letters, numbers and special characters in your password. '
           );
-        } else if (error.status === 403) {
-          console.log(error);
         } else if (error.status === 401) {
           this.toast.showError('Old password is incorrect.');
         }
@@ -52,6 +50,8 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
+    }
   }
 }
