@@ -15,6 +15,6 @@ export class ViewHeadingComponent implements OnInit {
   @Input() accountNumber: number = 1000;
 
   ngOnInit(): void {
-    this.name = JSON.parse(sessionStorage.getItem('user'))['name'];
+    this.name = JSON.parse(sessionStorage.getItem('user'))?.['name'];
   }
 }

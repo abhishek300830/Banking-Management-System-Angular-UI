@@ -5,11 +5,19 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
 describe('AppComponent', () => {
+  let MockMessageService: jasmine.SpyObj<MessageService>;
+
   beforeEach(async () => {
+    MockMessageService = jasmine.createSpyObj('MessageService', ['add']);
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, ToastModule],
       declarations: [AppComponent],
-      providers: [MessageService],
+      providers: [
+        {
+          provide: MessageService,
+          useValue: MockMessageService,
+        },
+      ],
     }).compileComponents();
   });
 
