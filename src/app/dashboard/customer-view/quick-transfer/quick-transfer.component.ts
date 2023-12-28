@@ -19,8 +19,8 @@ export class QuickTransferComponent {
   ) {}
 
   onSubmit(quickTransferForm: NgForm): void {
-    const account = quickTransferForm.value.account;
-    const amount = quickTransferForm.value.amount;
+    const account: number = quickTransferForm.value.account;
+    const amount: number = quickTransferForm.value.amount;
 
     this.customerService.transferFunds(amount, account).subscribe({
       next: (data) => {

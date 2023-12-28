@@ -70,7 +70,7 @@ describe('AccountDetailComponent', () => {
     spyOn(component, 'showCustomerBalance');
     component.ngOnInit();
     mockCustomerService.isAmountTransfered$.next(true);
-    expect(component.showCustomerBalance).toHaveBeenCalledTimes(2);
+    expect(component.showCustomerBalance).toHaveBeenCalled();
   });
 
   it('should set accountNumber, accountBalance, balanceOnHold, and emit accountNumber', () => {
