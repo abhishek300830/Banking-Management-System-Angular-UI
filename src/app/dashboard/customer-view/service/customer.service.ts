@@ -11,6 +11,7 @@ export class CustomerService {
   isAmountTransfered$ = new Subject<boolean>();
 
   getCustomerBalance() {
+    console.log('hello');
     return this.http.get(`${this.baseUrl}/account/balance`);
   }
 

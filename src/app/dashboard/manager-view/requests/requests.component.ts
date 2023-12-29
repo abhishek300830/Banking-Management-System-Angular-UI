@@ -53,7 +53,10 @@ export class RequestsComponent implements OnInit, OnDestroy {
     });
     this.isLoading = false;
   }
+
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
+    }
   }
 }
