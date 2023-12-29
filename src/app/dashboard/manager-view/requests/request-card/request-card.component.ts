@@ -10,6 +10,7 @@ interface RegistrationRequest {
   id_proof_type: string;
   id_proof: string;
   gender: string;
+  user_id: number;
 }
 interface ModificationRequest {
   request_id: number;
@@ -46,7 +47,6 @@ export class RequestCardComponent {
 
   handleRequest(status: string): void {
     if (this.registrationRequest) {
-      console.log(this.registrationRequest);
       this.dashboardService
         .approveRegistrationRequest(this.registrationRequest['user_id'], status)
         .subscribe({
