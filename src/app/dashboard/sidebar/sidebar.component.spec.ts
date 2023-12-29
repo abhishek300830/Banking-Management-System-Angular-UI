@@ -7,6 +7,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { LoginService, UserModel } from 'src/app/login/service/login.service';
 import { BehaviorSubject } from 'rxjs';
 import { DashboardService } from '../service/dashboard.service';
+import { Router } from '@angular/router';
+import { ToastService } from 'src/app/shared/toast.service';
 
 let mockCurrentUser = new BehaviorSubject<UserModel>({
   jwt_token: 'test',
@@ -23,6 +25,8 @@ describe('SidebarComponent', () => {
   let mockMessageService: jasmine.SpyObj<MessageService>;
   let mockLoginService: jasmine.SpyObj<LoginService>;
   let mockDashboardService: jasmine.SpyObj<DashboardService>;
+  let router: Router;
+  let toastService: ToastService;
 
   beforeEach(async () => {
     mockMessageService = jasmine.createSpyObj('MessageService', ['add']);
@@ -47,10 +51,39 @@ describe('SidebarComponent', () => {
     mockLoginService.currentUser$ = mockCurrentUser;
     mockDashboardService.currentTheme$ = mockCurrentTheme;
 
+    router = TestBed.inject(Router);
+    toastService = TestBed.inject(ToastService);
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should get class when current theme is Light', () => {
+    mockDashboardService.currentTheme$.next('Light');
+    expect(component.getClass()).toEqual('active_light');
+  });
+
+  it('should get class when current theme is Dark', () => {
+    mockDashboardService.currentTheme$.next('Dark');
+    expect(component.getClass()).toEqual('active_dark');
+  });
+
+  it('should logout successfully', () => {
+    spyOn(mockLoginService.currentUser$, 'next');
+    spyOn(sessionStorage, 'clear');
+    spyOn(toastService, 'showSuccess');
+    spyOn(router, 'navigate');
+
+    component.onLogout();
+
+    expect(mockLoginService.currentUser$.next).toHaveBeenCalledWith(null);
+    expect(sessionStorage.clear).toHaveBeenCalled();
+    expect(router.navigate).toHaveBeenCalledWith(['/login']);
+    expect(toastService.showSuccess).toHaveBeenCalledWith(
+      'Logout Successfully.'
+    );
   });
 });

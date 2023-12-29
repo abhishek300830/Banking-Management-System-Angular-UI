@@ -21,4 +21,12 @@ describe('DashboardHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should change theme', () => {
+    component.currentTheme = 'Dark';
+    component.changeTheme();
+    expect(component.currentTheme).toEqual('Light');
+    component.changeTheme();
+    expect(component.currentTheme).toEqual('Dark');
+  });
 });

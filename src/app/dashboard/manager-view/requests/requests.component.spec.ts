@@ -41,7 +41,6 @@ describe('RequestsComponent', () => {
   });
 
   it('should create', () => {
-    mockDashboardService.onHandleRequest$.next({});
     mockDashboardService.getAllRequests.and.returnValue(
       of({
         modification_requests: [],
@@ -50,6 +49,7 @@ describe('RequestsComponent', () => {
       })
     );
     fixture.detectChanges();
+    mockDashboardService.onHandleRequest$.next(true);
     expect(component).toBeTruthy();
   });
 
