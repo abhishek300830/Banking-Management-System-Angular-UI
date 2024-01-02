@@ -26,8 +26,10 @@ export class MockViewCustomerDetailsComponent {
 describe('ViewEditDetailsComponent', () => {
   let component: ViewEditDetailsComponent;
   let fixture: ComponentFixture<ViewEditDetailsComponent>;
+  let mockMessageService: jasmine.SpyObj<MessageService>;
 
   beforeEach(async () => {
+    mockMessageService = jasmine.createSpyObj('MessageService', ['add']);
     await TestBed.configureTestingModule({
       declarations: [
         ViewEditDetailsComponent,
@@ -35,7 +37,7 @@ describe('ViewEditDetailsComponent', () => {
         MockViewCustomerDetailsComponent,
       ],
       imports: [HttpClientTestingModule, FormsModule],
-      providers: [MessageService],
+      providers: [{ provide: MessageService, useValue: mockMessageService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ViewEditDetailsComponent);
@@ -45,5 +47,15 @@ describe('ViewEditDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set isEditMode to true', () => {
+    component.changeEditMode(true);
+    expect(component.isEditMode).toBeTrue();
+  });
+
+  it('should set isEditMode to false', () => {
+    component.changeEditMode(false);
+    expect(component.isEditMode).toBeFalse();
   });
 });
